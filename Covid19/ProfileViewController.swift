@@ -13,8 +13,12 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameLabel.text = username
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        usernameLabel.text = user.username
+        
+
         // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func logoutPressed(_ sender: UIButton) {

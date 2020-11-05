@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92C13722554495500FAB7BD /* Userdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C13712554495500FAB7BD /* Userdata.swift */; };
 		E9D4278D254BFF4D000CDF5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */; };
 		E9D4278F254BFF4D000CDF5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */; };
 		E9D42791254BFF4D000CDF5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D42790254BFF4D000CDF5E /* LoginViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E92C13712554495500FAB7BD /* Userdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdata.swift; sourceTree = "<group>"; };
 		E9D42789254BFF4D000CDF5E /* Covid19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E92C137525544C2700FAB7BD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E9D42790254BFF4D000CDF5E /* LoginViewController.swift */,
+				E92C13712554495500FAB7BD /* Userdata.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		E9D42780254BFF4D000CDF5E = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +85,7 @@
 			children = (
 				E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */,
 				E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */,
-				E9D42790254BFF4D000CDF5E /* LoginViewController.swift */,
+				E92C137525544C2700FAB7BD /* Login */,
 				E9D4280C254EEF7C000CDF5E /* Cases */,
 				E9D4282A25518991000CDF5E /* News */,
 				E9D42802254EDAC6000CDF5E /* ProfileViewController.swift */,
@@ -187,6 +198,7 @@
 				E9D4278F254BFF4D000CDF5E /* SceneDelegate.swift in Sources */,
 				E9D42807254EE195000CDF5E /* NewsCollectionViewController.swift in Sources */,
 				E9D4280A254EE267000CDF5E /* CasesTableViewController.swift in Sources */,
+				E92C13722554495500FAB7BD /* Userdata.swift in Sources */,
 				E9D4280F254EEFAC000CDF5E /* CasesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
