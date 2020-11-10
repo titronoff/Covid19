@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         if let lastSuccesLoginData = lastSuccesLoginData {
             let decoder = PropertyListDecoder()
             let restoredUser = try? decoder.decode(Userdata.self, from: lastSuccesLoginData)
-            print("Restore last session - Username: \(restoredUser?.username ?? "")")
+            usernameInputField.text = restoredUser?.username ?? ""
         }
         
         loginCheck()

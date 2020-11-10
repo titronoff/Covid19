@@ -22,8 +22,8 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logoutPressed(_ sender: UIButton) {
-        guard let newVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") else { return }
-        navigationController?.pushViewController(newVC, animated: true)
+
+        navigationController?.tabBarController?.navigationController?.popToRootViewController(animated: true)
         allCountries.removeAll()
         news.removeAll()
     
