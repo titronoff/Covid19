@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E92C13722554495500FAB7BD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C13712554495500FAB7BD /* UserModel.swift */; };
+		E945F643255EE03700BD5293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E945F642255EE03700BD5293 /* Main.storyboard */; };
+		E945F647255EE05000BD5293 /* Cases.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E945F646255EE05000BD5293 /* Cases.storyboard */; };
 		E9CD7C4B255D9071001F0AFD /* LoadCasesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD7C4A255D9071001F0AFD /* LoadCasesData.swift */; };
 		E9CD7C50255D90B8001F0AFD /* CasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD7C4F255D90B8001F0AFD /* CasesModel.swift */; };
 		E9D4278D254BFF4D000CDF5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */; };
 		E9D4278F254BFF4D000CDF5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */; };
 		E9D42791254BFF4D000CDF5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D42790254BFF4D000CDF5E /* LoginViewController.swift */; };
-		E9D42794254BFF4D000CDF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D42792254BFF4D000CDF5E /* Main.storyboard */; };
 		E9D42796254BFF4F000CDF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D42795254BFF4F000CDF5E /* Assets.xcassets */; };
 		E9D42803254EDAC6000CDF5E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D42802254EDAC6000CDF5E /* ProfileViewController.swift */; };
 		E9D4280A254EE267000CDF5E /* CasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D42809254EE267000CDF5E /* CasesTableViewController.swift */; };
@@ -22,7 +23,6 @@
 		E9D42818254F061D000CDF5E /* CountryCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D42817254F061D000CDF5E /* CountryCasesViewController.swift */; };
 		E9EBD588255ED45C00B42B93 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EBD587255ED45C00B42B93 /* LoginManager.swift */; };
 		E9EBD58E255ED97900B42B93 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EBD58D255ED97900B42B93 /* Launch Screen.storyboard */; };
-		E9F5F708255ECD2D00D3966C /* Cases.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F5F706255ECD2D00D3966C /* Cases.storyboard */; };
 		E9F5F70E255ECDEC00D3966C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F5F70D255ECDEC00D3966C /* Profile.storyboard */; };
 		E9F687A8255EDCD700C3B735 /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F687A7255EDCD700C3B735 /* NewsCollectionViewController.swift */; };
 		E9F687AB255EDCDD00C3B735 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F687AA255EDCDD00C3B735 /* NewsModel.swift */; };
@@ -32,13 +32,14 @@
 
 /* Begin PBXFileReference section */
 		E92C13712554495500FAB7BD /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E945F642255EE03700BD5293 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E945F646255EE05000BD5293 /* Cases.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cases.storyboard; sourceTree = "<group>"; };
 		E9CD7C4A255D9071001F0AFD /* LoadCasesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCasesData.swift; sourceTree = "<group>"; };
 		E9CD7C4F255D90B8001F0AFD /* CasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesModel.swift; sourceTree = "<group>"; };
 		E9D42789254BFF4D000CDF5E /* Covid19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9D42790254BFF4D000CDF5E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E9D42793254BFF4D000CDF5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9D42795254BFF4F000CDF5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9D4279A254BFF4F000CDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9D42802254EDAC6000CDF5E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		E9D42817254F061D000CDF5E /* CountryCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCasesViewController.swift; sourceTree = "<group>"; };
 		E9EBD587255ED45C00B42B93 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		E9EBD58D255ED97900B42B93 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		E9F5F707255ECD2D00D3966C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Covid19/Base.lproj/Cases.storyboard; sourceTree = "<group>"; };
 		E9F5F70D255ECDEC00D3966C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E9F687A7255EDCD700C3B735 /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCollectionViewController.swift; path = News/NewsCollectionViewController.swift; sourceTree = "<group>"; };
 		E9F687AA255EDCDD00C3B735 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsModel.swift; path = News/NewsModel.swift; sourceTree = "<group>"; };
@@ -73,6 +73,7 @@
 				E92C13712554495500FAB7BD /* UserModel.swift */,
 				E9D42790254BFF4D000CDF5E /* LoginViewController.swift */,
 				E9EBD587255ED45C00B42B93 /* LoginManager.swift */,
+				E945F642255EE03700BD5293 /* Main.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -116,7 +117,7 @@
 				E9D42809254EE267000CDF5E /* CasesTableViewController.swift */,
 				E9D4280D254EEFAC000CDF5E /* CasesTableViewCell.swift */,
 				E9D42817254F061D000CDF5E /* CountryCasesViewController.swift */,
-				E9F5F706255ECD2D00D3966C /* Cases.storyboard */,
+				E945F646255EE05000BD5293 /* Cases.storyboard */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -162,7 +163,6 @@
 			children = (
 				E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */,
 				E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */,
-				E9D42792254BFF4D000CDF5E /* Main.storyboard */,
 				E9EBD58D255ED97900B42B93 /* Launch Screen.storyboard */,
 			);
 			path = Main;
@@ -225,12 +225,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E945F647255EE05000BD5293 /* Cases.storyboard in Resources */,
 				E9EBD58E255ED97900B42B93 /* Launch Screen.storyboard in Resources */,
-				E9F5F708255ECD2D00D3966C /* Cases.storyboard in Resources */,
 				E9F5F70E255ECDEC00D3966C /* Profile.storyboard in Resources */,
+				E945F643255EE03700BD5293 /* Main.storyboard in Resources */,
 				E9D42796254BFF4F000CDF5E /* Assets.xcassets in Resources */,
 				E9F687B2255EDCF000C3B735 /* News.storyboard in Resources */,
-				E9D42794254BFF4D000CDF5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,25 +260,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E9D42792254BFF4D000CDF5E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9D42793254BFF4D000CDF5E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E9F5F706255ECD2D00D3966C /* Cases.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9F5F707255ECD2D00D3966C /* Base */,
-			);
-			name = Cases.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E9D4279B254BFF4F000CDF5E /* Debug */ = {
