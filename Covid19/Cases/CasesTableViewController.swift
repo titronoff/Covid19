@@ -11,7 +11,9 @@ class CasesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getCases()
+        loadCases()
         tableView.tableFooterView = UIView()
     }
 
