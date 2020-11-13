@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4A3-a4-FNk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cases-->
+        <scene sceneID="je9-u2-JEe">
+            <objects>
+                <tableViewController id="aAk-wY-Wt1" customClass="CasesTableViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tZI-iH-VnS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CasesCell" id="Vny-lI-eEI" customClass="CasesTableViewCell" customModule="Covid19" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CsaeCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vny-lI-eEI" id="RNx-Wv-0gy" customClass="CasesTableViewCell" customModule="Covid19" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyS-U4-4eY" userLabel="Contry">
+                                            <rect key="frame" x="20" y="14" width="74" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirmed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nZ-21-eW0" userLabel="Confirmed">
+                                            <rect key="frame" x="95" y="14" width="119" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Death" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VE-Pm-OZH" userLabel="Confirmed">
+                                            <rect key="frame" x="215" y="14" width="104" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="confirmedLabel" destination="2nZ-21-eW0" id="4uT-oM-MQ3"/>
+                                    <outlet property="countryLabel" destination="XyS-U4-4eY" id="dOk-3i-cS2"/>
+                                    <outlet property="deathLabel" destination="1VE-Pm-OZH" id="iXR-2g-dRM"/>
+                                    <segue destination="SlH-x4-hXP" kind="show" identifier="showCountryCases" id="WVf-ee-PtI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aAk-wY-Wt1" id="KQ9-kG-uYJ"/>
+                            <outlet property="delegate" destination="aAk-wY-Wt1" id="DKP-FA-rCE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Cases" id="H9D-6k-J1p"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REa-xz-FZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5544.9275362318849" y="561.68478260869574"/>
+        </scene>
+        <!--Country-->
+        <scene sceneID="ioY-Kh-FD0">
+            <objects>
+                <viewController id="SlH-x4-hXP" customClass="CountryCasesViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bY0-3R-VVr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Vp-Upe">
+                                <rect key="frame" x="41" y="78" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Death:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwU-P0-gzA">
+                                <rect key="frame" x="41" y="130" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TzL-YR-J2g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mwU-P0-gzA" firstAttribute="leading" secondItem="TzL-YR-J2g" secondAttribute="leading" constant="41" id="E8R-wW-l5q"/>
+                            <constraint firstItem="zIt-Vp-Upe" firstAttribute="top" secondItem="TzL-YR-J2g" secondAttribute="top" constant="34" id="KtF-4w-NNt"/>
+                            <constraint firstItem="zIt-Vp-Upe" firstAttribute="leading" secondItem="TzL-YR-J2g" secondAttribute="leading" constant="41" id="Ou7-s7-wo5"/>
+                            <constraint firstItem="TzL-YR-J2g" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="zIt-Vp-Upe" secondAttribute="trailing" constant="288" id="bUU-y6-tKM"/>
+                            <constraint firstItem="TzL-YR-J2g" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="mwU-P0-gzA" secondAttribute="trailing" constant="322" id="i0i-vP-Myo"/>
+                            <constraint firstItem="mwU-P0-gzA" firstAttribute="top" secondItem="zIt-Vp-Upe" secondAttribute="bottom" constant="31" id="j8N-fE-0u8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Country" id="JVt-9q-n6A">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="aDY-UM-4MX"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmedLabel" destination="zIt-Vp-Upe" id="kn0-XE-uk6"/>
+                        <outlet property="deathsLabel" destination="mwU-P0-gzA" id="nex-r1-xfU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9o-cu-VpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6365.217391304348" y="561.68478260869574"/>
+        </scene>
+        <!--Cases-->
+        <scene sceneID="ddr-Av-Eyz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4A3-a4-FNk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cases" image="list.bullet.rectangle" catalog="system" id="DE8-mw-zQ1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vg6-Hr-r5H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aAk-wY-Wt1" kind="relationship" relationship="rootViewController" id="y8c-T2-06x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SY-E3-g9O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4637.68115942029" y="561.68478260869574"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

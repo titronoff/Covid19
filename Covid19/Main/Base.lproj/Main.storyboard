@@ -126,20 +126,20 @@
             </objects>
             <point key="canvasLocation" x="1946" y="562"/>
         </scene>
-        <!--UINavigationController-Gcp-hT-YpA-->
+        <!--Profile-->
         <scene sceneID="dPL-jg-uRx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="UINavigationController-Gcp-hT-YpA" id="X4M-Zp-Y34" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="Profile" id="X4M-Zp-Y34" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="TMa-ph-CsN"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njZ-Rz-cgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1459" y="562"/>
         </scene>
-        <!--NavigationNewsCollectionViewController-->
+        <!--News-->
         <scene sceneID="TcH-sg-KbG">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="NavigationNewsCollectionViewController" storyboardName="News" referencedIdentifier="NavigationNewsCollectionViewController" id="uUo-Y7-dN9" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="NavigationNewsCollectionViewController" storyboardName="News" referencedIdentifier="News" id="uUo-Y7-dN9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="DXb-ep-K6n"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcO-D1-BWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
