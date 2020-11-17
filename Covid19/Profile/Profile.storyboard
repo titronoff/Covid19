@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gcp-hT-YpA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dV-tp-ByV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,22 +12,21 @@
         <!--Profile-->
         <scene sceneID="AYC-Bu-Rsd">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="6dV-tp-ByV" customClass="ProfileViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="6dV-tp-ByV" customClass="ProfileVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iwi-7j-TaG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INA-pK-YDD">
-                                <rect key="frame" x="140.5" y="140" width="133" height="36"/>
+                                <rect key="frame" x="140.5" y="96" width="133" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lED-SN-ZhZ">
-                                <rect key="frame" x="20" y="741" width="100" height="50"/>
+                                <rect key="frame" x="40" y="733" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="29S-59-c1C"/>
                                     <constraint firstAttribute="height" constant="50" id="amV-RL-ZCM"/>
                                 </constraints>
                                 <state key="normal" title="Logout">
@@ -42,12 +41,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="INA-pK-YDD" firstAttribute="top" secondItem="9os-x9-8Rw" secondAttribute="top" constant="52" id="GaH-NZ-9Mh"/>
-                            <constraint firstItem="9os-x9-8Rw" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="lED-SN-ZhZ" secondAttribute="trailing" constant="348" id="Xti-FS-Z0C"/>
+                            <constraint firstItem="9os-x9-8Rw" firstAttribute="trailing" secondItem="lED-SN-ZhZ" secondAttribute="trailing" constant="40" id="Xti-FS-Z0C"/>
                             <constraint firstItem="INA-pK-YDD" firstAttribute="centerX" secondItem="iwi-7j-TaG" secondAttribute="centerX" id="dJY-lY-QsH"/>
-                            <constraint firstItem="lED-SN-ZhZ" firstAttribute="leading" secondItem="9os-x9-8Rw" secondAttribute="leading" constant="20" id="krw-Hd-mFw"/>
-                            <constraint firstItem="9os-x9-8Rw" firstAttribute="bottom" secondItem="lED-SN-ZhZ" secondAttribute="bottom" constant="22" id="oxM-4K-bQW"/>
+                            <constraint firstItem="lED-SN-ZhZ" firstAttribute="leading" secondItem="9os-x9-8Rw" secondAttribute="leading" constant="40" id="krw-Hd-mFw"/>
+                            <constraint firstItem="9os-x9-8Rw" firstAttribute="bottom" secondItem="lED-SN-ZhZ" secondAttribute="bottom" constant="30" id="oxM-4K-bQW"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="homekit" catalog="system" id="V6R-1w-tMa"/>
                     <navigationItem key="navigationItem" title="Profile" id="Ws0-ZD-69x"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -57,25 +57,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhC-A4-F2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3759.420289855073" y="841.304347826087"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="prs-oq-khC">
-            <objects>
-                <navigationController storyboardIdentifier="Profile" automaticallyAdjustsScrollViewInsets="NO" id="Gcp-hT-YpA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="homekit" catalog="system" id="V6R-1w-tMa"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iyL-pH-UlU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6dV-tp-ByV" kind="relationship" relationship="rootViewController" id="yCF-nJ-V3w"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BBW-4s-1Dq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2852.1739130434785" y="841.304347826087"/>
         </scene>
     </scenes>
     <resources>

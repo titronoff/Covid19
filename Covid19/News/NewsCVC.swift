@@ -9,30 +9,30 @@ import UIKit
 
 private let reuseIdentifier = "NewsCell"
 
-class NewsCollectionViewController: UICollectionViewController {
+// var newsFeed: NewsFeed
 
+class NewsCVC: UICollectionViewController {
+    
+
+    
     override func viewDidLoad() {
-        getNews()
         super.viewDidLoad()
-
     }
 
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return news.count
+        return articles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NewsViewCell
-    
-        let author = news[indexPath.row].author
-        let title = news[indexPath.row].title
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NewsCell
+        cell.authorLb.text = articles[indexPath.row].author ?? ""
+        cell.titleLb.text = articles[indexPath.row].title ?? ""
         
-        cell.newsAuthorLabel.text = author
-        cell.newsTitleLabel.text = title
-    
+        if let imgUrl = articles[indexPath.row].urlToImage {
+            cell.imageLb.image = Downloader.downloadImageWithURL(url: imgUrl)
+        }
         return cell
     }
 

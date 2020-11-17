@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileVC: UIViewController {
 
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -23,10 +23,8 @@ class ProfileViewController: UIViewController {
     
     @IBAction func logoutPressed(_ sender: UIButton) {
 
-        navigationController?.tabBarController?.navigationController?.popToRootViewController(animated: true)
-        allCountries.removeAll()
-        news.removeAll()
-    
+        //navigationController?.tabBarController?.navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     /*
     // MARK: - Navigation

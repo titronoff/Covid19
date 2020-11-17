@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Y0-uu-mfs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Y0-uu-mfs">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" userLabel="LoginViewController" customClass="LoginViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" userLabel="LoginViewController" customClass="LoginVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPz-Hy-Mam"/>
-                                    <segue destination="ysT-uZ-DuE" kind="show" id="bz3-FU-Y7H"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fCc-vL-wgb">
@@ -47,17 +46,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="inputFieldsChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="NPC-WC-VTY"/>
                                     <action selector="usernameChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZBr-Hp-0Tq"/>
                                 </connections>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="o7n-FV-X7M">
+                                <rect key="frame" x="188.66666666666666" y="190" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fCc-vL-wgb" secondAttribute="trailing" constant="40" id="BGu-2C-MQI"/>
+                            <constraint firstItem="fCc-vL-wgb" firstAttribute="top" secondItem="o7n-FV-X7M" secondAttribute="bottom" constant="60" id="EtC-yb-lEr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gcL-qV-Cx0" secondAttribute="trailing" constant="40" id="F7Q-hc-cSC"/>
                             <constraint firstItem="zTr-Ac-SIw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Feq-G5-qiO"/>
+                            <constraint firstItem="o7n-FV-X7M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kyk-9B-KRs"/>
                             <constraint firstItem="gcL-qV-Cx0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="NT5-sT-ZE7"/>
                             <constraint firstItem="fCc-vL-wgb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="V0s-80-MPi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zTr-Ac-SIw" secondAttribute="trailing" constant="40" id="Yg2-qh-wMr"/>
@@ -70,6 +73,7 @@
                     <navigationItem key="navigationItem" id="czR-Kq-R7v"/>
                     <connections>
                         <outlet property="c2" destination="tWa-5A-LYl" id="5dQ-9D-yJg"/>
+                        <outlet property="loadIndicator" destination="o7n-FV-X7M" id="d92-QD-hiV"/>
                         <outlet property="loginButton" destination="gcL-qV-Cx0" id="kHj-1C-VXa"/>
                         <outlet property="passwordInputField" destination="zTr-Ac-SIw" id="oXi-wT-6fC"/>
                         <outlet property="usernameInputField" destination="fCc-vL-wgb" id="5wp-m7-khB"/>
@@ -77,12 +81,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="117"/>
+            <point key="canvasLocation" x="1133" y="117"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="k45-PM-jTO">
             <objects>
-                <tabBarController id="ysT-uZ-DuE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabVC" id="ysT-uZ-DuE" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qEZ-Kb-tgc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5mu-1v-yVT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -114,7 +118,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jh-gg-jXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="118.20652173913044"/>
+            <point key="canvasLocation" x="414" y="117"/>
         </scene>
         <!--Cases-->
         <scene sceneID="Xuj-oe-yIo">
@@ -124,7 +128,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9FP-ag-3rk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="562"/>
+            <point key="canvasLocation" x="1946" y="530"/>
         </scene>
         <!--Profile-->
         <scene sceneID="dPL-jg-uRx">
@@ -134,17 +138,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njZ-Rz-cgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459" y="562"/>
+            <point key="canvasLocation" x="2184" y="530"/>
         </scene>
         <!--News-->
         <scene sceneID="TcH-sg-KbG">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="NavigationNewsCollectionViewController" storyboardName="News" referencedIdentifier="News" id="uUo-Y7-dN9" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="News" referencedIdentifier="News" id="uUo-Y7-dN9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="DXb-ep-K6n"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcO-D1-BWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2424" y="562"/>
+            <point key="canvasLocation" x="1693" y="530"/>
         </scene>
     </scenes>
     <resources>

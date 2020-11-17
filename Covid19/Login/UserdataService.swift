@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension LoginViewController {
+extension LoginVC {
     
     func loginCheck() {
         if usernameInputField.text! != "" && passwordInputField.text != "" {
@@ -20,10 +20,9 @@ extension LoginViewController {
     }
     
     func getLoginData() {
-        let lastSuccesLoginData = UserDefaults.standard.data(forKey: "userData")
-        if let lastSuccesLoginData = lastSuccesLoginData {
+        if let lastLoginData = UserDefaults.standard.data(forKey: "userData") {
             let decoder = PropertyListDecoder()
-            let restoredUser = try? decoder.decode(Userdata.self, from: lastSuccesLoginData)
+            let restoredUser = try? decoder.decode(Userdata.self, from: lastLoginData)
             usernameInputField.text = restoredUser?.username ?? ""
         }
     }
@@ -36,5 +35,4 @@ extension LoginViewController {
             UserDefaults.standard.setValue(data, forKey: "userData")
         }
     }
-    
 }
