@@ -9,9 +9,20 @@ import UIKit
 
 class CasesTVC: UITableViewController {
     
+    static func zeroChanger (_ input: Int) -> String {
+        if input == 0 {
+            return "N/A"
+        } else {
+            return String(input)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        configureRefreshControl()
+        refreshControl?.beginRefreshing()
+        getCases()
     }
 
     //MARK: Generate test data
@@ -43,12 +54,11 @@ class CasesTVC: UITableViewController {
         
     }
     
-    static func zeroChanger (_ input: Int) -> String {
-        if input == 0 {
-            return "N/A"
-        } else {
-            return String(input)
+    func configureRefreshControl () {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action:
+                                          #selector(getCases),
+                                          for: .valueChanged)
         }
-    }
-
+    
 }

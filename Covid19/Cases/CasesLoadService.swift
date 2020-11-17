@@ -9,7 +9,7 @@ import UIKit
 
 extension CasesTVC {
     
-    static func getCases() {
+    @objc func getCases() {
 
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true") else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -21,6 +21,10 @@ extension CasesTVC {
                     let newCases = try JSONDecoder().decode([Case].self, from: data)
                     cases = newCases
                     print(cases[0].country)
+                    DispatchQueue.main.async {
+                        self.refreshControl?.endRefreshing()
+                        self.tableView.reloadData()
+                    }
                 } catch let jsonError {
                     print(jsonError)
                 }

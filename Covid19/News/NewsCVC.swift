@@ -13,10 +13,18 @@ private let reuseIdentifier = "NewsCell"
 
 class NewsCVC: UICollectionViewController {
     
-
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    var refreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = false
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        configureRefreshControl()
+        refreshControl?.beginRefreshing()
+        getNewsFeedData()
+       
     }
 
 
@@ -31,10 +39,21 @@ class NewsCVC: UICollectionViewController {
         cell.titleLb.text = articles[indexPath.row].title ?? ""
         
         if let imgUrl = articles[indexPath.row].urlToImage {
-            cell.imageLb.image = Downloader.downloadImageWithURL(url: imgUrl)
+            DispatchQueue.global(qos: .background).async {
+                let img = Downloader.downloadImageWithURL(url: imgUrl)
+                DispatchQueue.main.async {
+                    cell.imageLb.image = img
+                }
+            }
         }
         return cell
     }
 
-
+    func configureRefreshControl () {
+       // Add the refresh control to your UIScrollView object.
+       self.refreshControl = UIRefreshControl()
+       self.refreshControl?.addTarget(self, action:
+                                          #selector(getNewsFeedData),
+                                          for: .valueChanged)
+    }
 }

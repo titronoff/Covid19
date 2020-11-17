@@ -42,7 +42,6 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadIndicator.isHidden = true
-    //last login
         getLoginData()
         loginCheck()
 
@@ -57,11 +56,8 @@ class LoginVC: UIViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         saveLoginData()
-        loadIndicator.isHidden = false
-        loadIndicator.hidesWhenStopped = true
-        loadIndicator.startAnimating()
-        CasesTVC.getCases()
-        getNewsFeedData()
+        let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
+        self.navigationController?.pushViewController(tabVC, animated: true)
     }
 
     @IBAction func usernameChanged(_ sender: UITextField) {
@@ -70,34 +66,6 @@ class LoginVC: UIViewController {
 
     @IBAction func pswdChanged(_ sender: UITextField) {
         loginCheck()
-    }
-    
-    
-    
-    func getNewsFeedData() {
-        let urlString = "https://newsapi.org/v2/top-headlines?q=covid&apiKey=084c67c2b33148828b786875cbed3fc2"
-        guard let url = URL(string: urlString) else {return}
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                //handle error
-                print(error)
-            }
-            guard let data = data else {return}
-            do {
-                let newsFeed = try JSONDecoder().decode(NewsFeed.self, from: data)
-                guard let newArticles = newsFeed.articles else {return}
-                DispatchQueue.main.async {
-                    articles = newArticles
-                    print("afetr parsing counting: ", articles.count ?? "nil")
-                    print("load news view ->")
-                    self.loadIndicator.stopAnimating()
-                    let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
-                    self.navigationController?.pushViewController(tabVC, animated: true)
-                }
-            } catch let jsonError {
-                print(jsonError)
-            }
-        }.resume()
     }
 }
 

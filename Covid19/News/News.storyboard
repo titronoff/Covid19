@@ -23,6 +23,10 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="QZk-2Q-dgD">
+                            <rect key="frame" x="0.0" y="-44" width="414" height="736"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsCell" id="awS-Cs-WdD" customClass="NewsCell" customModule="Covid19" customModuleProvider="target">
                                 <rect key="frame" x="5" y="5" width="175" height="150"/>
@@ -87,6 +91,9 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="News" id="Jqs-Sn-VmH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="indicator" destination="QZk-2Q-dgD" id="Lyz-6y-cxG"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WN3-B5-PZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +102,6 @@
         <!--News-->
         <scene sceneID="deJ-ON-mAT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8dp-3t-RMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="News" automaticallyAdjustsScrollViewInsets="NO" id="8v8-eO-q1C" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="1uH-Ai-rYM"/>
                     <toolbarItems/>
@@ -108,6 +114,7 @@
                         <segue destination="snN-mG-Db4" kind="relationship" relationship="rootViewController" id="PFZ-iQ-5nK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dp-3t-RMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1619" y="368"/>
         </scene>
