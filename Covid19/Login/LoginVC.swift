@@ -32,7 +32,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameInputField: UITextField!
     @IBOutlet weak var passwordInputField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+    //@IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadIndicator.isHidden = true
+        //loadIndicator.isHidden = true
         getLoginData()
         loginCheck()
 

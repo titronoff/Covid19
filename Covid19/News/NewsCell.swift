@@ -12,4 +12,9 @@ class NewsCell: UICollectionViewCell {
     @IBOutlet weak var authorLb: UILabel!
     @IBOutlet weak var imageLb: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // code here !!
+        imageLb.image = nil
+    }
 }

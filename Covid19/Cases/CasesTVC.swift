@@ -20,8 +20,6 @@ class CasesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        configureRefreshControl()
-        refreshControl?.beginRefreshing()
         getCases()
     }
 
@@ -53,12 +51,5 @@ class CasesTVC: UITableViewController {
         navigationController?.pushViewController(caseDetailsVC, animated: true)
         
     }
-    
-    func configureRefreshControl () {
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action:
-                                          #selector(getCases),
-                                          for: .valueChanged)
-        }
     
 }

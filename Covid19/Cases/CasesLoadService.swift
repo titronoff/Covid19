@@ -10,7 +10,10 @@ import UIKit
 extension CasesTVC {
     
     @objc func getCases() {
-
+        
+        configureTVRefreshControl()
+        refreshControl?.beginRefreshing()
+        
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true") else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -31,5 +34,12 @@ extension CasesTVC {
             }
         }.resume()
 
+    }
+    
+    func configureTVRefreshControl () {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action:
+                                          #selector(getCases),
+                                          for: .valueChanged)
     }
 }

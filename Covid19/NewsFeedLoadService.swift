@@ -8,8 +8,12 @@
 import UIKit
 
 extension NewsCVC {
-     
+    
     @objc func getNewsFeedData() {
+        configureCVRefreshControl ()
+        collectionView.addSubview(refreshControl)
+        refreshControl.beginRefreshing()
+        
         let urlString = "https://newsapi.org/v2/top-headlines?q=covid&apiKey=084c67c2b33148828b786875cbed3fc2"
         guard let url = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -23,13 +27,18 @@ extension NewsCVC {
                 guard let newArticles = newsFeed.articles else {return}
                 DispatchQueue.main.async {
                     articles = newArticles
-                    self.refreshControl?.endRefreshing()
-                    self.indicator.stopAnimating()
                     self.collectionView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
             } catch let jsonError {
                 print(jsonError)
             }
         }.resume()
+    }
+    
+    func configureCVRefreshControl () {
+        self.refreshControl.addTarget(self, action:
+                                          #selector(getNewsFeedData),
+                                          for: .valueChanged)
     }
 }

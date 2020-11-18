@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 private let reuseIdentifier = "NewsCell"
 
@@ -13,16 +14,11 @@ private let reuseIdentifier = "NewsCell"
 
 class NewsCVC: UICollectionViewController {
     
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    var refreshControl: UIRefreshControl?
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicator.isHidden = false
-        indicator.hidesWhenStopped = true
-        indicator.startAnimating()
-        configureRefreshControl()
-        refreshControl?.beginRefreshing()
+        //collectionView.layoutIfNeeded()
         getNewsFeedData()
        
     }
@@ -33,6 +29,7 @@ class NewsCVC: UICollectionViewController {
         return articles.count
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NewsCell
         cell.authorLb.text = articles[indexPath.row].author ?? ""
@@ -48,12 +45,11 @@ class NewsCVC: UICollectionViewController {
         }
         return cell
     }
-
-    func configureRefreshControl () {
-       // Add the refresh control to your UIScrollView object.
-       self.refreshControl = UIRefreshControl()
-       self.refreshControl?.addTarget(self, action:
-                                          #selector(getNewsFeedData),
-                                          for: .valueChanged)
+    
+    // MARK: Safari controller
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let url = articles[indexPath.row].url else {return}
+        let sfVC = SFSafariViewController(url: URL(string: url)!)
+        present(sfVC, animated: true, completion: nil)
     }
 }
