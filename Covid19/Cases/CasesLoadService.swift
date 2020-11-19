@@ -11,7 +11,6 @@ extension CasesTVC {
     
     @objc func getCases() {
         
-        configureTVRefreshControl()
         refreshControl?.beginRefreshing()
         
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true") else {return}

@@ -20,6 +20,7 @@ class CasesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        configureTVRefreshControl()
         getCases()
     }
 
@@ -42,12 +43,8 @@ class CasesTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let caseDetailsVC = UIStoryboard(name: "Cases", bundle: nil).instantiateViewController(withIdentifier: "CasesDetails") as! CaseDetailsVC
-        caseDetailsVC.country = cases[indexPath.row].country
-        caseDetailsVC.infected = cases[indexPath.row].infected ?? 0
-        caseDetailsVC.recovered = cases[indexPath.row].recovered ?? 0
-        caseDetailsVC.death = cases[indexPath.row].deceased ?? 0
-        caseDetailsVC.updated = cases[indexPath.row].updated ?? ""
+        let caseDetailsVC = UIStoryboard(name: "CaseDetails", bundle: nil).instantiateViewController(withIdentifier: "CasesDetails") as! CaseDetailsVC
+        caseDetailsVC.caseToShow = cases[indexPath.row]
         navigationController?.pushViewController(caseDetailsVC, animated: true)
         
     }

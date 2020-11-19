@@ -18,7 +18,7 @@ class NewsCVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //collectionView.layoutIfNeeded()
+        configureCVRefreshControl ()
         getNewsFeedData()
        
     }
@@ -48,8 +48,9 @@ class NewsCVC: UICollectionViewController {
     
     // MARK: Safari controller
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let url = articles[indexPath.row].url else {return}
-        let sfVC = SFSafariViewController(url: URL(string: url)!)
+        guard let urlString = articles[indexPath.row].url else {return}
+        guard let url = URL(string: urlString) else {return}
+        let sfVC = SFSafariViewController(url: url)
         present(sfVC, animated: true, completion: nil)
     }
 }

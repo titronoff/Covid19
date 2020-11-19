@@ -15,19 +15,20 @@ class CaseDetailsVC: UIViewController {
     @IBOutlet weak var deathLb: UILabel!
     @IBOutlet weak var updatedLb: UILabel!
     
-    var country = ""
-    var infected = 0
-    var recovered = 0
-    var death = 0
-    var updated = ""
+    var caseToShow = Case("")
+ 
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        countryLb.text = country
-        infectedLb.text = CasesTVC.zeroChanger(infected)
-        recoveredLb.text = CasesTVC.zeroChanger(recovered)
-        deathLb.text = CasesTVC.zeroChanger(death)
-        updatedLb.text = "Updated: \(updated.dropLast(14))"
+        countryLb.text = caseToShow.country
+        infectedLb.text = CasesTVC.zeroChanger(caseToShow.infected ?? 0)
+        recoveredLb.text = CasesTVC.zeroChanger(caseToShow.recovered ?? 0)
+        deathLb.text = CasesTVC.zeroChanger(caseToShow.deceased ?? 0)
+        if let updateDate = caseToShow.updated {
+            updatedLb.text = "\(updateDate.dropLast(14))"
+        } else {
+            updatedLb.text = "N/A"
+        }
     }
 }

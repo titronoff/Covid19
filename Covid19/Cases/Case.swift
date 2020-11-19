@@ -13,6 +13,10 @@ struct Case: Decodable {
     var deceased: Int?
     var updated: String?
     var country: String
+    
+    init(_ country: String) {
+        self.country = country
+    }
 
     private enum CodingKeys: String, CodingKey {
             case infected, recovered, deceased, country, lastUpdatedApify

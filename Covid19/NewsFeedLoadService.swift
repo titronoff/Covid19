@@ -10,7 +10,6 @@ import UIKit
 extension NewsCVC {
     
     @objc func getNewsFeedData() {
-        configureCVRefreshControl ()
         collectionView.addSubview(refreshControl)
         refreshControl.beginRefreshing()
         
