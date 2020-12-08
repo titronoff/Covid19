@@ -9,11 +9,13 @@ import UIKit
 
 extension CasesTVC {
     
-    @objc func getCases() {
+    @objc func getCasesData() {
         
-        refreshControl?.beginRefreshing()
+        self.refreshControl?.beginRefreshing()
+        self.cases.removeAll()
+        self.tableView.reloadData()
         
-        guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true") else {return}
+        guard let url = URL(string: casesSourceUrl) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print(error)
@@ -21,8 +23,7 @@ extension CasesTVC {
             if let data = data {
                 do {
                     let newCases = try JSONDecoder().decode([Case].self, from: data)
-                    cases = newCases
-                    print(cases[0].country)
+                    self.cases = newCases
                     DispatchQueue.main.async {
                         self.refreshControl?.endRefreshing()
                         self.tableView.reloadData()
@@ -38,7 +39,7 @@ extension CasesTVC {
     func configureTVRefreshControl () {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action:
-                                          #selector(getCases),
+                                          #selector(getCasesData),
                                           for: .valueChanged)
     }
 }

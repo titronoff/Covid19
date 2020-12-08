@@ -6,21 +6,25 @@
 //
 
 import Foundation
+import KeychainAccess
 
 extension LoginVC {
     
     func loginCheck() {
-        if usernameInputField.text! != "" && passwordInputField.text != "" {
-        loginButton.isEnabled = true
-        loginButton.backgroundColor = .systemGreen
+        if usernameInputField.text != "" && passwordInputField.text != "" {
+            loginButton.isEnabled = true
+            loginButton.layer.borderColor = UIColor.systemBlue.cgColor
+            
         } else {
             loginButton.isEnabled = false
-            loginButton.backgroundColor = .lightGray
+            loginButton.layer.borderColor = UIColor.systemGray.cgColor
         }
     }
     
     func getLoginData() {
-        if let lastLoginData = UserDefaults.standard.data(forKey: "userData") {
+        let keychain = Keychain(service: "com.ivanovski.covid19-token")
+        //if let lastLoginData = UserDefaults.standard.data(forKey: "userData") {
+        if let lastLoginData = keychain[data: "userdata"] {
             let decoder = PropertyListDecoder()
             let restoredUser = try? decoder.decode(Userdata.self, from: lastLoginData)
             usernameInputField.text = restoredUser?.username ?? ""
@@ -28,11 +32,19 @@ extension LoginVC {
     }
     
     func saveLoginData() {
-        user.username = usernameInputField.text ?? ""
-        if user.username != "" {
+        let keychain = Keychain(service: "com.ivanovski.covid19-token")
+        userdata.username = usernameInputField.text ?? ""
+        userdata.password = passwordInputField.text ?? ""
+        
+        if userdata.username != "" {
             let encoder = PropertyListEncoder()
-            let data = try? encoder.encode(user)
-            UserDefaults.standard.setValue(data, forKey: "userData")
+            let data = try? encoder.encode(userdata)
+            //UserDefaults.standard.setValue(data, forKey: "userData")
+
+            keychain[data: "userdata"] = data
         }
+            
+
+
     }
 }

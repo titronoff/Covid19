@@ -21,14 +21,19 @@ class CaseDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.backItem?.backButtonTitle = "test"
         countryLb.text = caseToShow.country
-        infectedLb.text = CasesTVC.zeroChanger(caseToShow.infected ?? 0)
-        recoveredLb.text = CasesTVC.zeroChanger(caseToShow.recovered ?? 0)
-        deathLb.text = CasesTVC.zeroChanger(caseToShow.deceased ?? 0)
+        infectedLb.text = " " + Editor.zeroChanger(caseToShow.infected ?? 0) + " "
+        recoveredLb.text = " " + Editor.zeroChanger(caseToShow.recovered ?? 0) + " "
+        deathLb.text = " " + Editor.zeroChanger(caseToShow.deceased ?? 0) + " "
         if let updateDate = caseToShow.updated {
             updatedLb.text = "\(updateDate.dropLast(14))"
         } else {
             updatedLb.text = "N/A"
         }
+    }
+    
+    @IBAction func swipeRight(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

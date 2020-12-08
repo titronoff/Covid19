@@ -18,61 +18,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VCQ-e9-NEy">
-                                <rect key="frame" x="40" y="138" width="133" height="166"/>
+                                <rect key="frame" x="40" y="138" width="129.5" height="169"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-G9-xhe">
-                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-G9-xhe">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="21.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-TG-4Em">
-                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Vp-Upe">
-                                                <rect key="frame" x="71.5" y="0.0" width="44" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Vp-Upe" customClass="ColoredTextRed" customModule="Covid19" customModuleProvider="target">
+                                                <rect key="frame" x="75.5" y="3" width="34.5" height="16"/>
+                                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEM-1Y-rjK">
-                                        <rect key="frame" x="0.0" y="50.5" width="133" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rEM-1Y-rjK">
+                                        <rect key="frame" x="0.0" y="51.5" width="129.5" height="21.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovered: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zl-3Y-rIC">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smH-UI-daW" userLabel="Recovered">
-                                                <rect key="frame" x="90" y="0.0" width="43" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smH-UI-daW" userLabel="Recovered" customClass="ColoredTextBlue" customModule="Covid19" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="3" width="34.5" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usI-Oz-ALi">
-                                        <rect key="frame" x="0.0" y="101" width="128.5" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="usI-Oz-ALi">
+                                        <rect key="frame" x="0.0" y="103" width="124.5" height="21.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deceased: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc7-Yy-4am">
-                                                <rect key="frame" x="0.0" y="0.0" width="85.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwU-P0-gzA">
-                                                <rect key="frame" x="85.5" y="0.0" width="43" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemPinkColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwU-P0-gzA" customClass="ColoredTextBlack" customModule="Covid19" customModuleProvider="target">
+                                                <rect key="frame" x="90" y="3" width="34.5" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9Op-0M-aSN">
-                                        <rect key="frame" x="0.0" y="151.5" width="121.5" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="154.5" width="121.5" height="14.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyJ-9I-dSP">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="14.5"/>
@@ -99,12 +100,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TzL-YR-J2g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="McA-3D-Is5" firstAttribute="leading" secondItem="TzL-YR-J2g" secondAttribute="leading" constant="40" id="IWU-uX-itu"/>
                             <constraint firstItem="VCQ-e9-NEy" firstAttribute="leading" secondItem="TzL-YR-J2g" secondAttribute="leading" constant="40" id="cGs-fY-XpM"/>
                             <constraint firstItem="McA-3D-Is5" firstAttribute="top" secondItem="TzL-YR-J2g" secondAttribute="top" constant="40" id="rN4-2g-0Lf"/>
                             <constraint firstItem="VCQ-e9-NEy" firstAttribute="top" secondItem="McA-3D-Is5" secondAttribute="bottom" constant="30.000000000000014" id="thb-Vh-N7O"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="v6x-Ub-7mC" appends="YES" id="JdX-h3-iwq"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="JVt-9q-n6A">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aDY-UM-4MX"/>
@@ -118,6 +123,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9o-cu-VpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="v6x-Ub-7mC">
+                    <connections>
+                        <action selector="swipeRight:" destination="SlH-x4-hXP" id="3dZ-pG-2qx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6365.217391304348" y="561.68478260869574"/>
         </scene>
@@ -125,9 +135,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -23,19 +23,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lED-SN-ZhZ">
-                                <rect key="frame" x="40" y="733" width="334" height="50"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lED-SN-ZhZ" customClass="RoundedButton" customModule="Covid19" customModuleProvider="target">
+                                <rect key="frame" x="40" y="743" width="334" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="amV-RL-ZCM"/>
+                                    <constraint firstAttribute="height" constant="40" id="amV-RL-ZCM"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Logout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
                                 <connections>
                                     <action selector="logoutPressed:" destination="6dV-tp-ByV" eventType="touchUpInside" id="uQl-we-hXZ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9YK-Tg-oSr">
+                                <rect key="frame" x="145.5" y="202" width="123" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last login session: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqb-Ri-cy9">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df6-9R-dP8">
+                                        <rect key="frame" x="44" y="17" width="35.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9os-x9-8Rw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,14 +61,19 @@
                             <constraint firstItem="INA-pK-YDD" firstAttribute="top" secondItem="9os-x9-8Rw" secondAttribute="top" constant="52" id="GaH-NZ-9Mh"/>
                             <constraint firstItem="9os-x9-8Rw" firstAttribute="trailing" secondItem="lED-SN-ZhZ" secondAttribute="trailing" constant="40" id="Xti-FS-Z0C"/>
                             <constraint firstItem="INA-pK-YDD" firstAttribute="centerX" secondItem="iwi-7j-TaG" secondAttribute="centerX" id="dJY-lY-QsH"/>
+                            <constraint firstItem="9YK-Tg-oSr" firstAttribute="centerX" secondItem="iwi-7j-TaG" secondAttribute="centerX" id="kJR-bi-Xjz"/>
                             <constraint firstItem="lED-SN-ZhZ" firstAttribute="leading" secondItem="9os-x9-8Rw" secondAttribute="leading" constant="40" id="krw-Hd-mFw"/>
                             <constraint firstItem="9os-x9-8Rw" firstAttribute="bottom" secondItem="lED-SN-ZhZ" secondAttribute="bottom" constant="30" id="oxM-4K-bQW"/>
+                            <constraint firstItem="9YK-Tg-oSr" firstAttribute="top" secondItem="INA-pK-YDD" secondAttribute="bottom" constant="70" id="rUl-2H-EZp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="homekit" catalog="system" id="V6R-1w-tMa"/>
                     <navigationItem key="navigationItem" title="Profile" id="Ws0-ZD-69x"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="LogoutbottomNSC" destination="oxM-4K-bQW" id="dml-Ts-zX3"/>
+                        <outlet property="lastLoginLb" destination="df6-9R-dP8" id="s0K-f2-cqp"/>
+                        <outlet property="logoutBtn" destination="lED-SN-ZhZ" id="SaI-y6-LH4"/>
                         <outlet property="usernameLabel" destination="INA-pK-YDD" id="hDh-Lz-bdj"/>
                     </connections>
                 </viewController>
@@ -61,11 +84,11 @@
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

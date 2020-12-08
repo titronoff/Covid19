@@ -6,23 +6,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class Downloader {
-    
-    class func downloadImageWithURL(url:String) -> UIImage! {
-        
-        if let data = NSData(contentsOf: NSURL(string: url)! as URL) {
-            return UIImage(data: data as Data)
-        } else {
-            return UIImage()
-        }
-    }
-}
-
- var user = Userdata(username: "")
- var articles = [Article]()
- var cases = [Case]()
- var queue = OperationQueue()
+ var userdata = Userdata()
 
 class LoginVC: UIViewController {
 
@@ -31,28 +17,28 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var usernameInputField: UITextField!
     @IBOutlet weak var passwordInputField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: RoundedButton! 
     //@IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
-    
+// MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
         c2.constant += view.bounds.height
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //loadIndicator.isHidden = true
-        getLoginData()
-        loginCheck()
-
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         c2.constant -= view.bounds.height
         UIView.animate(withDuration: 1, delay: 0) {
             self.view.layoutIfNeeded()
         }
     }
+// set up and evaluate
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getLoginData()
+        loginCheck()
+        
+        print(Date())
+    }
+    
     
     @IBAction func loginPressed(_ sender: UIButton) {
         saveLoginData()

@@ -9,19 +9,14 @@ import UIKit
 
 class CasesTVC: UITableViewController {
     
-    static func zeroChanger (_ input: Int) -> String {
-        if input == 0 {
-            return "N/A"
-        } else {
-            return String(input)
-        }
-    }
+    var cases = [Case]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: "CaseCell", bundle: nil), forCellReuseIdentifier: "CaseCell")
         tableView.tableFooterView = UIView()
         configureTVRefreshControl()
-        getCases()
+        getCasesData()
     }
 
     //MARK: Generate test data
@@ -33,13 +28,10 @@ class CasesTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CasesCell", for: indexPath) as! CasesCell
-        cell.countryLb.text = cases[indexPath.row].country
-        cell.infectedLb.text = CasesTVC.zeroChanger(cases[indexPath.row].infected ?? 0)
-        cell.recoveredLb.text = CasesTVC.zeroChanger(cases[indexPath.row].recovered ?? 0)
-        cell.deathLb.text = CasesTVC.zeroChanger(cases[indexPath.row].deceased ?? 0)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CaseCell", for: indexPath) as! CaseCell
+        cell.setupCell(cases[indexPath.row])
+        cell.setupCell(cases[indexPath.row])
+       return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,3 +42,14 @@ class CasesTVC: UITableViewController {
     }
     
 }
+
+/*
+ 
+ //override func viewDidLoad() {
+ ...
+ self.tableView.register(UINib(nibName: "CustomOneCell", bundle: nil), forCellReuseIdentifier: "CustomOneCell")
+ self.tableView.dataSource = self
+ self.tableView.delegate   = self
+ ...
+ 
+ */
