@@ -10,17 +10,6 @@ import KeychainAccess
 
 extension LoginVC {
     
-    func loginCheck() {
-        if usernameInputField.text != "" && passwordInputField.text != "" {
-            loginButton.isEnabled = true
-            loginButton.layer.borderColor = UIColor.systemBlue.cgColor
-            
-        } else {
-            loginButton.isEnabled = false
-            loginButton.layer.borderColor = UIColor.systemGray.cgColor
-        }
-    }
-    
     func getLoginData() {
         let keychain = Keychain(service: "com.ivanovski.covid19-token")
         //if let lastLoginData = UserDefaults.standard.data(forKey: "userData") {

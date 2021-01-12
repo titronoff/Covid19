@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D081C25EC9A7E84F1E9B3A7 /* Pods_Covid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2099E0BE8F68B867F069126C /* Pods_Covid19.framework */; };
+		E92A5CDE25AE05AF00BFAF70 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A5CDD25AE05AF00BFAF70 /* LoginValidator.swift */; };
 		E92C13722554495500FAB7BD /* Userdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C13712554495500FAB7BD /* Userdata.swift */; };
 		E939E00D25619DD100B65AF8 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = E939E00C25619DD100B65AF8 /* Case.swift */; };
 		E945F643255EE03700BD5293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E945F642255EE03700BD5293 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		2099E0BE8F68B867F069126C /* Pods_Covid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1006F9C60C0586671D55D6 /* Pods-Covid19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid19.release.xcconfig"; path = "Target Support Files/Pods-Covid19/Pods-Covid19.release.xcconfig"; sourceTree = "<group>"; };
 		5062B818857154D7D53E6DCE /* Pods-Covid19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid19.debug.xcconfig"; path = "Target Support Files/Pods-Covid19/Pods-Covid19.debug.xcconfig"; sourceTree = "<group>"; };
+		E92A5CDD25AE05AF00BFAF70 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
 		E92C13712554495500FAB7BD /* Userdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdata.swift; sourceTree = "<group>"; };
 		E939E00C25619DD100B65AF8 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
 		E945F642255EE03700BD5293 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				E92C13712554495500FAB7BD /* Userdata.swift */,
 				E9EBD587255ED45C00B42B93 /* UserdataService.swift */,
 				E9D42790254BFF4D000CDF5E /* LoginVC.swift */,
+				E92A5CDD25AE05AF00BFAF70 /* LoginValidator.swift */,
 				E945F642255EE03700BD5293 /* Main.storyboard */,
 			);
 			path = Login;
@@ -421,6 +424,7 @@
 				E9D75C8525695035000A6086 /* Video.swift in Sources */,
 				E9D42818254F061D000CDF5E /* CaseDetailsVC.swift in Sources */,
 				E99441F42566C05400DCFE39 /* NewsVC.swift in Sources */,
+				E92A5CDE25AE05AF00BFAF70 /* LoginValidator.swift in Sources */,
 				E9F4D806256D559200425BB3 /* RoundedButton.swift in Sources */,
 				E9A1435A256A949A00A370F4 /* VideoCell.swift in Sources */,
 				E9D4278F254BFF4D000CDF5E /* SceneDelegate.swift in Sources */,

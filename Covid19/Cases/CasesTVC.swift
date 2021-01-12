@@ -18,10 +18,7 @@ class CasesTVC: UITableViewController {
         configureTVRefreshControl()
         getCasesData()
     }
-
-    //MARK: Generate test data
-
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cases.count
@@ -29,7 +26,6 @@ class CasesTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CaseCell", for: indexPath) as! CaseCell
-        cell.setupCell(cases[indexPath.row])
         cell.setupCell(cases[indexPath.row])
        return cell
     }
@@ -42,14 +38,3 @@ class CasesTVC: UITableViewController {
     }
     
 }
-
-/*
- 
- //override func viewDidLoad() {
- ...
- self.tableView.register(UINib(nibName: "CustomOneCell", bundle: nil), forCellReuseIdentifier: "CustomOneCell")
- self.tableView.dataSource = self
- self.tableView.delegate   = self
- ...
- 
- */

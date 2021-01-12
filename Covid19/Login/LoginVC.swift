@@ -34,7 +34,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getLoginData()
-        loginCheck()
+        LoginValidator.loginCheck(usernameInputField, passwordInputField, loginButton)
         
         print(Date())
     }
@@ -47,11 +47,11 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func usernameChanged(_ sender: UITextField) {
-        loginCheck()
+        LoginValidator.loginCheck(usernameInputField, passwordInputField, loginButton)
     }
 
     @IBAction func pswdChanged(_ sender: UITextField) {
-        loginCheck()
+        LoginValidator.loginCheck(usernameInputField, passwordInputField, loginButton)
     }
 }
 
