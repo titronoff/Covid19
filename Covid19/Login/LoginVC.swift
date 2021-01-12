@@ -8,16 +8,16 @@
 import UIKit
 import SafariServices
 
- var userdata = Userdata()
+var userdata = Userdata()
 
 class LoginVC: UIViewController {
 
-    @IBOutlet weak var c2: NSLayoutConstraint!
+    @IBOutlet private weak var c2: NSLayoutConstraint!
     
 
     @IBOutlet weak var usernameInputField: UITextField!
     @IBOutlet weak var passwordInputField: UITextField!
-    @IBOutlet weak var loginButton: RoundedButton! 
+    @IBOutlet private weak var loginButton: RoundedButton!
     //@IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
 // MARK: Animation
@@ -39,21 +39,21 @@ class LoginVC: UIViewController {
     }
     
     
-    @IBAction func loginPressed(_ sender: UIButton) {
+    @IBAction private func loginPressed(_ sender: UIButton) {
         saveLoginData()
         let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
         self.navigationController?.pushViewController(tabVC, animated: true)
     }
 
-    @IBAction func usernameChanged(_ sender: UITextField) {
+    @IBAction private func usernameChanged(_ sender: UITextField) {
         loginButtonSwitcher()
     }
 
-    @IBAction func pswdChanged(_ sender: UITextField) {
+    @IBAction private func pswdChanged(_ sender: UITextField) {
         loginButtonSwitcher()
     }
     
-    func loginButtonSwitcher () {
+    private func loginButtonSwitcher () {
         if LoginValidator.loginCheck(usernameInputField.text ?? "", passwordInputField.text ?? "") {
             loginButton.isEnabled = true
             loginButton.layer.borderColor = UIColor.systemBlue.cgColor

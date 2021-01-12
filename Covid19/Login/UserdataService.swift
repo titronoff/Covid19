@@ -16,7 +16,7 @@ extension LoginVC {
         if let lastLoginData = keychain[data: "userdata"] {
             let decoder = PropertyListDecoder()
             let restoredUser = try? decoder.decode(Userdata.self, from: lastLoginData)
-            usernameInputField.text = restoredUser?.username ?? ""
+            self.usernameInputField.text = restoredUser?.username ?? ""
         }
     }
     

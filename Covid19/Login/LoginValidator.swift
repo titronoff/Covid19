@@ -18,11 +18,7 @@ class LoginValidator {
     }
     
     private static func validatePassword(_ passwordText: String) -> Bool {
-        if passwordText.count >= 8 && differentCaseExisting(passwordText) {
-            return true
-        } else {
-            return false
-        }
+        return (passwordText.count >= 8 && differentCaseExisting(passwordText))
     }
     
     private static func differentCaseExisting(_ str: String) -> Bool {
@@ -36,10 +32,7 @@ class LoginValidator {
                 lowerCase = true
             }
          }
-        if upperCase && lowerCase {
-            return true
-        } else {
-            return false
-        }
+        return (upperCase && lowerCase)
+
      }
 }
