@@ -34,8 +34,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getLoginData()
-        LoginValidator.loginCheck(usernameInputField, passwordInputField, loginButton)
-        
+        loginButtonSwitcher ()
         print(Date())
     }
     
@@ -47,11 +46,21 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func usernameChanged(_ sender: UITextField) {
-        LoginValidator.loginCheck(usernameInputField, passwordInputField, loginButton)
+        loginButtonSwitcher()
     }
 
     @IBAction func pswdChanged(_ sender: UITextField) {
-        LoginValidator.loginCheck(usernameInputField, passwordInputField, loginButton)
+        loginButtonSwitcher()
+    }
+    
+    func loginButtonSwitcher () {
+        if LoginValidator.loginCheck(usernameInputField.text ?? "", passwordInputField.text ?? "") {
+            loginButton.isEnabled = true
+            loginButton.layer.borderColor = UIColor.systemBlue.cgColor
+        } else {
+            loginButton.isEnabled = false
+            loginButton.layer.borderColor = UIColor.systemGray.cgColor
+        }
     }
 }
 
