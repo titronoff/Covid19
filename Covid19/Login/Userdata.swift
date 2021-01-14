@@ -10,6 +10,4 @@ import Foundation
 struct Userdata: Codable {
     var username: String = ""
     var password: String = ""
-    //var lastLogin: Date = Date()
-    //static var
 }

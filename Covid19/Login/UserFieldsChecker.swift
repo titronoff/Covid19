@@ -7,9 +7,9 @@
 
 import UIKit
 
-class LoginValidator : UserFieldsValidator {
+class UserFieldsChecker : UserFieldsValidator {
     
-    func loginCheck(_ usernameText: String, _  passwordText: String) -> Bool {
+    func loginFieldsCheck(_ usernameText: String, _  passwordText: String) -> Bool {
         return usernameText != "" && validatePassword(passwordText)
     }
     

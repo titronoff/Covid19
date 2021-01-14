@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import Swinject
 
 var userdata = Userdata()
 
@@ -15,8 +16,7 @@ class LoginVC: UIViewController {
     @IBOutlet  weak var passwordInputField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var c2: NSLayoutConstraint!
-    private var userValidator: UserFieldsValidator = LoginValidator()
-
+    private var userValidator: UserFieldsValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
 // MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
         c2.constant += view.bounds.height
@@ -51,7 +51,7 @@ class LoginVC: UIViewController {
     }
     
     private func loginButtonSwitcher () {
-        if userValidator.loginCheck(usernameInputField.text ?? "", passwordInputField.text ?? "") {
+        if userValidator.loginFieldsCheck(usernameInputField.text ?? "", passwordInputField.text ?? "") {
             loginButton.isEnabled = true
             loginButton.layer.borderColor = UIColor.systemBlue.cgColor
         } else {
