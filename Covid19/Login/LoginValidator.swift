@@ -7,21 +7,17 @@
 
 import UIKit
 
-class LoginValidator {
+class LoginValidator : UserFieldsValidator {
     
-    static func loginCheck(_ usernameText: String, _  passwordText: String) -> Bool {
-        if usernameText != "" && validatePassword(passwordText) {
-            return true
-        } else {
-            return false
-        }
+    func loginCheck(_ usernameText: String, _  passwordText: String) -> Bool {
+        return usernameText != "" && validatePassword(passwordText)
     }
     
-    private static func validatePassword(_ passwordText: String) -> Bool {
+    private func validatePassword(_ passwordText: String) -> Bool {
         return (passwordText.count >= 8 && differentCaseExisting(passwordText))
     }
     
-    private static func differentCaseExisting(_ str: String) -> Bool {
+    private func differentCaseExisting(_ str: String) -> Bool {
         var upperCase = false
         var lowerCase = false
         for char in str {

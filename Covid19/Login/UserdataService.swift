@@ -22,7 +22,7 @@ extension LoginVC {
     
     func saveLoginData() {
         let keychain = Keychain(service: "com.ivanovski.covid19-token")
-        userdata.username = usernameInputField.text ?? ""
+        userdata.username = self.usernameInputField.text ?? ""
         userdata.password = passwordInputField.text ?? ""
         
         if userdata.username != "" {
