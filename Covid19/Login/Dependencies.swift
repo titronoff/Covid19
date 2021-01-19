@@ -11,4 +11,10 @@ import Swinject
 class Dependencies {
 
     static var container: Container!
+    
+    static func registerDependencies () {
+        Dependencies.container.register(UserFieldsValidator.self) { _ in UserFieldsChecker ()}
+        Dependencies.container.register(UIstyle.self, name: "Light") { _ in LoginStylerLight()}
+        Dependencies.container.register(UIstyle.self, name: "Dark") { _ in LoginStylerDark()}
+    }
 }

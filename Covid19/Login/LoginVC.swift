@@ -12,11 +12,15 @@ import Swinject
 var userdata = Userdata()
 
 class LoginVC: UIViewController {
+    
+    private var userValidator: UserFieldsValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
+
+    
     @IBOutlet  weak var usernameInputField: UITextField!
     @IBOutlet  weak var passwordInputField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var c2: NSLayoutConstraint!
-    private var userValidator: UserFieldsValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
+    
 // MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
         c2.constant += view.bounds.height
@@ -30,9 +34,10 @@ class LoginVC: UIViewController {
 // set up and evaluate
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStyle()
         getLoginData()
         loginButtonSwitcher ()
-        print(Date())
+        
     }
     
     
@@ -59,6 +64,14 @@ class LoginVC: UIViewController {
             loginButton.layer.borderColor = UIColor.systemGray.cgColor
         }
     }
+    
+    private func setStyle() {
+        let provider = styleProvider()
+        self.view.backgroundColor = provider.getBgColor()
+        self.usernameInputField.textColor = provider.getTextColor()
+        self.passwordInputField.textColor = provider.getTextColor()
+    }
+    
 }
 
 
