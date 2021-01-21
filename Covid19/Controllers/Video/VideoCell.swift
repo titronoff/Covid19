@@ -43,7 +43,7 @@ class VideoCell: UICollectionViewCell {
         mediaSource.text = "  " + item.snippet.channelTitle + "  "
         let imgUrl = item.snippet.thumbnails.medium.url
         DispatchQueue.global(qos: .background).async {
-            let img = Downloader.downloadImageWithURL(url: imgUrl)
+            let img = ImageDownloader.downloadImageWithURL(url: imgUrl)
             DispatchQueue.main.async {
                 self.imageLb.image = img
             }

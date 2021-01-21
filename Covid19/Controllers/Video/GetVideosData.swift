@@ -21,12 +21,10 @@ extension VideosVC {
         }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                //handle error
                 print("URLSession error: ", error)
             }
             guard let data = data else {return}
             do {
-                print(data)
                 let videosList = try JSONDecoder().decode(VideosList.self, from: data)
                 DispatchQueue.main.async {
                     self.videos.groups[self.selectedMenuItem].list = videosList
@@ -47,4 +45,3 @@ extension VideosVC {
                                           for: .valueChanged)
     }
 }
- 

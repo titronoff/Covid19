@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D081C25EC9A7E84F1E9B3A7 /* Pods_Covid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2099E0BE8F68B867F069126C /* Pods_Covid19.framework */; };
 		E92A5CDE25AE05AF00BFAF70 /* UserFieldsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A5CDD25AE05AF00BFAF70 /* UserFieldsChecker.swift */; };
-		E92A5CE125B0AAC100BFAF70 /* UserFieldsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A5CE025B0AAC100BFAF70 /* UserFieldsValidator.swift */; };
+		E92A5CE125B0AAC100BFAF70 /* UserFieldsValidator protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A5CE025B0AAC100BFAF70 /* UserFieldsValidator protocol.swift */; };
 		E92A5CEA25B0C15100BFAF70 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A5CE925B0C15100BFAF70 /* Dependencies.swift */; };
 		E92C13722554495500FAB7BD /* Userdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C13712554495500FAB7BD /* Userdata.swift */; };
 		E939E00D25619DD100B65AF8 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = E939E00C25619DD100B65AF8 /* Case.swift */; };
@@ -27,9 +27,12 @@
 		E99442E42568256500DCFE39 /* CaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99442E22568256500DCFE39 /* CaseCell.swift */; };
 		E99442E52568256500DCFE39 /* CaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99442E32568256500DCFE39 /* CaseCell.xib */; };
 		E99DB7CC256EC5EB00E6317D /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DB7CB256EC5EB00E6317D /* Editor.swift */; };
-		E99DB7CF256EC60500E6317D /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DB7CE256EC60500E6317D /* Downloader.swift */; };
+		E99DB7CF256EC60500E6317D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DB7CE256EC60500E6317D /* ImageDownloader.swift */; };
 		E9A1435A256A949A00A370F4 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A14358256A949A00A370F4 /* VideoCell.swift */; };
 		E9A1435B256A949A00A370F4 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A14359256A949A00A370F4 /* VideoCell.xib */; };
+		E9B4C57925B743F700859A03 /* UIstyle protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B4C57825B743F700859A03 /* UIstyle protocol.swift */; };
+		E9B4C57C25B7495300859A03 /* LoginStylers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B4C57B25B7495300859A03 /* LoginStylers.swift */; };
+		E9B4C58525B8947F00859A03 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B4C58425B8947F00859A03 /* NetworkService.swift */; };
 		E9C8E24A256D792100D08966 /* RoundedMediaSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C8E249256D792100D08966 /* RoundedMediaSource.swift */; };
 		E9CD7C4B255D9071001F0AFD /* GetCasesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CD7C4A255D9071001F0AFD /* GetCasesData.swift */; };
 		E9D4278D254BFF4D000CDF5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */; };
@@ -56,7 +59,7 @@
 		4F1006F9C60C0586671D55D6 /* Pods-Covid19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid19.release.xcconfig"; path = "Target Support Files/Pods-Covid19/Pods-Covid19.release.xcconfig"; sourceTree = "<group>"; };
 		5062B818857154D7D53E6DCE /* Pods-Covid19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid19.debug.xcconfig"; path = "Target Support Files/Pods-Covid19/Pods-Covid19.debug.xcconfig"; sourceTree = "<group>"; };
 		E92A5CDD25AE05AF00BFAF70 /* UserFieldsChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFieldsChecker.swift; sourceTree = "<group>"; };
-		E92A5CE025B0AAC100BFAF70 /* UserFieldsValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFieldsValidator.swift; sourceTree = "<group>"; };
+		E92A5CE025B0AAC100BFAF70 /* UserFieldsValidator protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserFieldsValidator protocol.swift"; sourceTree = "<group>"; };
 		E92A5CE925B0C15100BFAF70 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		E92C13712554495500FAB7BD /* Userdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdata.swift; sourceTree = "<group>"; };
 		E939E00C25619DD100B65AF8 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
@@ -68,15 +71,18 @@
 		E99441E92566C05400DCFE39 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		E99441EA2566C05400DCFE39 /* ArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticleCell.xib; path = News/ArticleCell.xib; sourceTree = "<group>"; };
 		E99441EB2566C05400DCFE39 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		E99441EC2566C05400DCFE39 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = News/News.swift; sourceTree = "<group>"; };
+		E99441EC2566C05400DCFE39 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		E99441ED2566C05400DCFE39 /* NewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsVC.swift; path = News/NewsVC.swift; sourceTree = "<group>"; };
 		E99442D92567200D00DCFE39 /* GetNewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetNewsData.swift; path = News/GetNewsData.swift; sourceTree = "<group>"; };
 		E99442E22568256500DCFE39 /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
 		E99442E32568256500DCFE39 /* CaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseCell.xib; sourceTree = "<group>"; };
 		E99DB7CB256EC5EB00E6317D /* Editor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
-		E99DB7CE256EC60500E6317D /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		E99DB7CE256EC60500E6317D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		E9A14358256A949A00A370F4 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		E9A14359256A949A00A370F4 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		E9B4C57825B743F700859A03 /* UIstyle protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIstyle protocol.swift"; sourceTree = "<group>"; };
+		E9B4C57B25B7495300859A03 /* LoginStylers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStylers.swift; sourceTree = "<group>"; };
+		E9B4C58425B8947F00859A03 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E9C8E249256D792100D08966 /* RoundedMediaSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedMediaSource.swift; sourceTree = "<group>"; };
 		E9CD7C4A255D9071001F0AFD /* GetCasesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCasesData.swift; sourceTree = "<group>"; };
 		E9D42789254BFF4D000CDF5E /* Covid19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,11 +138,12 @@
 		E92C137525544C2700FAB7BD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E92C13712554495500FAB7BD /* Userdata.swift */,
 				E9EBD587255ED45C00B42B93 /* UserdataService.swift */,
 				E9D42790254BFF4D000CDF5E /* LoginVC.swift */,
 				E92A5CE925B0C15100BFAF70 /* Dependencies.swift */,
-				E92A5CE025B0AAC100BFAF70 /* UserFieldsValidator.swift */,
+				E9B4C57825B743F700859A03 /* UIstyle protocol.swift */,
+				E92A5CE025B0AAC100BFAF70 /* UserFieldsValidator protocol.swift */,
+				E9B4C57B25B7495300859A03 /* LoginStylers.swift */,
 				E92A5CDD25AE05AF00BFAF70 /* UserFieldsChecker.swift */,
 				E945F642255EE03700BD5293 /* Main.storyboard */,
 			);
@@ -161,15 +168,17 @@
 			path = ContentMenu;
 			sourceTree = "<group>";
 		};
-		E99DB7D2256EC62D00E6317D /* Tools */ = {
+		E99DB7D2256EC62D00E6317D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E9D75C8B25697D96000A6086 /* Browser.swift */,
-				E99DB7CE256EC60500E6317D /* Downloader.swift */,
-				E99DB7CB256EC5EB00E6317D /* Editor.swift */,
 				E99DB7D8256EC73300E6317D /* UIcustomizers */,
+				E99DB7C6256E987D00E6317D /* ContentMenu */,
+				E9D75C8B25697D96000A6086 /* Browser.swift */,
+				E99DB7CE256EC60500E6317D /* ImageDownloader.swift */,
+				E99DB7CB256EC5EB00E6317D /* Editor.swift */,
+				E9B4C58425B8947F00859A03 /* NetworkService.swift */,
 			);
-			path = Tools;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E99DB7D8256EC73300E6317D /* UIcustomizers */ = {
@@ -180,6 +189,29 @@
 				E9F4D809256D5B2800425BB3 /* ColoredText.swift */,
 			);
 			path = UIcustomizers;
+			sourceTree = "<group>";
+		};
+		E9B4C58925B8ABE200859A03 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E92C137525544C2700FAB7BD /* Login */,
+				E9D75C7C256944D2000A6086 /* Video */,
+				E9D4282A25518991000CDF5E /* News */,
+				E9D4280C254EEF7C000CDF5E /* Cases */,
+				E9F5F712255ECE2E00D3966C /* Profile */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E9B4C58A25B8AC6900859A03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E92C13712554495500FAB7BD /* Userdata.swift */,
+				E9D75C8425695035000A6086 /* Video.swift */,
+				E99441EC2566C05400DCFE39 /* News.swift */,
+				E939E00C25619DD100B65AF8 /* Case.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E9D42780254BFF4D000CDF5E = {
@@ -203,12 +235,10 @@
 		E9D4278B254BFF4D000CDF5E /* Covid19 */ = {
 			isa = PBXGroup;
 			children = (
-				E9D75C7C256944D2000A6086 /* Video */,
+				E9B4C58A25B8AC6900859A03 /* Models */,
+				E99DB7D2256EC62D00E6317D /* Services */,
+				E9B4C58925B8ABE200859A03 /* Controllers */,
 				E9F5F723255ED28E00D3966C /* Main */,
-				E92C137525544C2700FAB7BD /* Login */,
-				E9D4280C254EEF7C000CDF5E /* Cases */,
-				E9D4282A25518991000CDF5E /* News */,
-				E9F5F712255ECE2E00D3966C /* Profile */,
 				E9F5F71C255ECFEE00D3966C /* Resources */,
 				E9EBD58A255ED89E00B42B93 /* Settings */,
 			);
@@ -218,7 +248,6 @@
 		E9D4280C254EEF7C000CDF5E /* Cases */ = {
 			isa = PBXGroup;
 			children = (
-				E939E00C25619DD100B65AF8 /* Case.swift */,
 				E9CD7C4A255D9071001F0AFD /* GetCasesData.swift */,
 				E939E00A25619D7800B65AF8 /* CaseDetails */,
 				E99442E22568256500DCFE39 /* CaseCell.swift */,
@@ -232,7 +261,6 @@
 		E9D4282A25518991000CDF5E /* News */ = {
 			isa = PBXGroup;
 			children = (
-				E99441EC2566C05400DCFE39 /* News.swift */,
 				E99442D92567200D00DCFE39 /* GetNewsData.swift */,
 				E99441E82566C05400DCFE39 /* ArticleCell.swift */,
 				E99441EA2566C05400DCFE39 /* ArticleCell.xib */,
@@ -240,12 +268,12 @@
 				E99441ED2566C05400DCFE39 /* NewsVC.swift */,
 			);
 			name = News;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E9D75C7C256944D2000A6086 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				E9D75C8425695035000A6086 /* Video.swift */,
 				E9D75C8825697CCD000A6086 /* GetVideosData.swift */,
 				E9A14358256A949A00A370F4 /* VideoCell.swift */,
 				E9A14359256A949A00A370F4 /* VideoCell.xib */,
@@ -286,8 +314,6 @@
 				E9D4278C254BFF4D000CDF5E /* AppDelegate.swift */,
 				E9D4278E254BFF4D000CDF5E /* SceneDelegate.swift */,
 				E9EBD58D255ED97900B42B93 /* LaunchScreen.storyboard */,
-				E99DB7D2256EC62D00E6317D /* Tools */,
-				E99DB7C6256E987D00E6317D /* ContentMenu */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -418,14 +444,15 @@
 				E9D75C8925697CCD000A6086 /* GetVideosData.swift in Sources */,
 				E9D42791254BFF4D000CDF5E /* LoginVC.swift in Sources */,
 				E9D4278D254BFF4D000CDF5E /* AppDelegate.swift in Sources */,
-				E92A5CE125B0AAC100BFAF70 /* UserFieldsValidator.swift in Sources */,
+				E92A5CE125B0AAC100BFAF70 /* UserFieldsValidator protocol.swift in Sources */,
 				E939E00D25619DD100B65AF8 /* Case.swift in Sources */,
+				E9B4C57C25B7495300859A03 /* LoginStylers.swift in Sources */,
 				E99DB7CC256EC5EB00E6317D /* Editor.swift in Sources */,
 				E99442DA2567200D00DCFE39 /* GetNewsData.swift in Sources */,
 				E9D42803254EDAC6000CDF5E /* ProfileVC.swift in Sources */,
 				E92A5CEA25B0C15100BFAF70 /* Dependencies.swift in Sources */,
 				E9D75C8C25697D96000A6086 /* Browser.swift in Sources */,
-				E99DB7CF256EC60500E6317D /* Downloader.swift in Sources */,
+				E99DB7CF256EC60500E6317D /* ImageDownloader.swift in Sources */,
 				E9EBD588255ED45C00B42B93 /* UserdataService.swift in Sources */,
 				E99441F22566C05400DCFE39 /* MenuCell.swift in Sources */,
 				E9D75C8125694AC6000A6086 /* VideosVC.swift in Sources */,
@@ -433,10 +460,12 @@
 				E9D42818254F061D000CDF5E /* CaseDetailsVC.swift in Sources */,
 				E99441F42566C05400DCFE39 /* NewsVC.swift in Sources */,
 				E92A5CDE25AE05AF00BFAF70 /* UserFieldsChecker.swift in Sources */,
+				E9B4C58525B8947F00859A03 /* NetworkService.swift in Sources */,
 				E9F4D806256D559200425BB3 /* RoundedButton.swift in Sources */,
 				E9A1435A256A949A00A370F4 /* VideoCell.swift in Sources */,
 				E9D4278F254BFF4D000CDF5E /* SceneDelegate.swift in Sources */,
 				E99441F32566C05400DCFE39 /* News.swift in Sources */,
+				E9B4C57925B743F700859A03 /* UIstyle protocol.swift in Sources */,
 				E9CD7C4B255D9071001F0AFD /* GetCasesData.swift in Sources */,
 				E9C8E24A256D792100D08966 /* RoundedMediaSource.swift in Sources */,
 				E99441EF2566C05400DCFE39 /* ArticleCell.swift in Sources */,

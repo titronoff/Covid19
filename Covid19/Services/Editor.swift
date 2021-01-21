@@ -8,14 +8,14 @@
 import Foundation
 
 class Editor {
-    static func zeroChanger (_ input: Int) -> String {
+    class func zeroChanger (_ input: Int) -> String {
         if input == 0 {
             return "N/A"
         } else {
             return String(input)
         }
     }
-    static func htmlCleaner(_ input: String) {
+    class  func htmlCleaner(_ input: String) {
         
     }
 }

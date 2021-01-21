@@ -26,7 +26,7 @@ class ArticleCell: UICollectionViewCell {
         
         if let imgUrl = item.urlToImage {
             DispatchQueue.global(qos: .background).async {
-                let img = Downloader.downloadImageWithURL(url: imgUrl)
+                let img = ImageDownloader.downloadImageWithURL(url: imgUrl)
                 DispatchQueue.main.async {
                     self.imageLb.image = img
                 }

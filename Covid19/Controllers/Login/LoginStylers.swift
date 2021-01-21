@@ -31,7 +31,7 @@ class LoginStylerDark: UIstyle {
 
 }
 
-class styleProvider {
+class StyleProvider {
     let date = Date()
     let calendar = Calendar.current
     

@@ -13,8 +13,8 @@ var userdata = Userdata()
 
 class LoginVC: UIViewController {
     
-    private var userValidator: UserFieldsValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
-
+    private var userValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
+    private var network = NetworkService()
     
     @IBOutlet  weak var usernameInputField: UITextField!
     @IBOutlet  weak var passwordInputField: UITextField!
@@ -37,6 +37,12 @@ class LoginVC: UIViewController {
         setStyle()
         getLoginData()
         loginButtonSwitcher ()
+        
+        
+        network.videosFetcher(urlString: Videogroups().groups[0].url)
+        network.newsFetcher(urlString: News().items[0].url)
+        network.casesFetcher(urlString: casesSourceUrl)
+        
         
     }
     
@@ -66,7 +72,7 @@ class LoginVC: UIViewController {
     }
     
     private func setStyle() {
-        let provider = styleProvider()
+        let provider = StyleProvider()
         self.view.backgroundColor = provider.getBgColor()
         self.usernameInputField.textColor = provider.getTextColor()
         self.passwordInputField.textColor = provider.getTextColor()

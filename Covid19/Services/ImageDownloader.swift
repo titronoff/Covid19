@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Downloader {
+class ImageDownloader {
     
     class func downloadImageWithURL(url:String) -> UIImage! {
         

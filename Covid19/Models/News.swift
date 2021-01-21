@@ -7,8 +7,18 @@
 
 import Foundation
 
+//newsapi.org keys
+
+
+
 class News {
     var items = [NewsItem]()
+    let newsApiKey = ["084c67c2b33148828b786875cbed3fc2", //main
+                      "836119757a1d4881ad4d1050682f658a", //1
+                      "105f39ee084f4a7593a5df52902cba2e", //2
+                      "9b23a0a02ce441419d1e10fa2376ab1c", //3
+                      "0421233d9abb47b1a05338cf4e403508", //4
+                      "fdbaf3a7e09b483daad5015193c88b68"] //5
     init() {
         setup()
     }

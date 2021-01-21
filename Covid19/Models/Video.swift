@@ -11,18 +11,25 @@ class Videogroups {
     var groups = [Videogroup]()
     init() {
         groups.append(Videogroup(name: "Covid", keyword: "Covid"))
-        groups.append(Videogroup(name: "Latest", keyword: "Latest"))
+        groups.append(Videogroup(name: "Latest", keyword: "Covid+Latest"))
         groups.append(Videogroup(name: "Koronavirus", keyword: "Koronavirus"))
     }
 }
 struct Videogroup {
     var name: String
     var keyword: String
+    var ytAPIkey = ["AIzaSyCoCgCVy9txmg2ZrMgTV_S18O79-Tx8mtk",
+                    "AIzaSyAw00__z0F2SYuj_aXQ1-rHCMqBRfI9nP0",
+                    "AIzaSyAmj7frSfsjCq4NX0L5jM9whsqjale1xAw",
+                    "AIzaSyDE_4TyexEXr7dukhg0pRGyXyOG222wfGk",
+                    "AIzaSyBcvv6fcNbV03zhwfe3eVrGbiePisnJ3z0",
+                    "AIzaSyCznAzCpky2ugDBIyWHN_9ArrDB54pTSow"]
     var url: String {
         let resourceUrl = "https://youtube.googleapis.com/youtube/v3/"
         let requestType = "search?"
-        let part = "part=snippet&q=\(keyword)&type=video&videoCaption=closedCaption&maxResults=20"
-        return "\(resourceUrl)\(requestType)\(part)&key=\(ytAPIkey[3])"
+        let results = 10
+        let part = "part=snippet&q=\(keyword)&type=video&videoCaption=closedCaption&maxResults=\(results)"
+        return "\(resourceUrl)\(requestType)\(part)&key=\(ytAPIkey[0])"
     }
     var list = VideosList()
 }
@@ -68,10 +75,10 @@ struct Image: Codable {
     var width: Int
     var height: Int
 }
-// Request example
+// URL Request example:
 // https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=covid&type=video&videoCaption=closedCaption&maxResults=20&key=AIzaSyCoCgCVy9txmg2ZrMgTV_S18O79-Tx8mtk
 
-/* JSON Example.:
+/* JSON Example:
  
   "kind": "youtube#searchListResponse",
   "etag": "cdFHvTCEORhQvNSohgFG4UUPups",
