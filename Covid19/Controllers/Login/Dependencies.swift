@@ -16,5 +16,6 @@ class Dependencies {
         Dependencies.container.register(UserFieldsValidator.self) { _ in UserFieldsChecker ()}
         Dependencies.container.register(UIstyle.self, name: "Light") { _ in LoginStylerLight()}
         Dependencies.container.register(UIstyle.self, name: "Dark") { _ in LoginStylerDark()}
+        Dependencies.container.register(EventManager.self) { _ in EventsManager()}.inObjectScope(.container)
     }
 }

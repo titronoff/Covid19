@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 class ProfileVC: UIViewController {
 
@@ -41,6 +42,7 @@ class ProfileVC: UIViewController {
 
         //navigationController?.tabBarController?.navigationController?.popToRootViewController(animated: true)
         navigationController?.popToRootViewController(animated: true)
+        Dependencies.container.resolve(EventManager.self)?.notify()
     }
     /*
     // MARK: - Navigation
