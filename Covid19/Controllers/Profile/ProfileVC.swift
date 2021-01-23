@@ -9,7 +9,8 @@ import UIKit
 import Swinject
 
 class ProfileVC: UIViewController {
-
+    
+    //Outlets
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var lastLoginLb: UILabel!
     @IBOutlet weak var logoutBtn: RoundedButton! {

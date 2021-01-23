@@ -9,6 +9,7 @@ import UIKit
 
 class MenuCell: UICollectionViewCell {
     
+    //Outlets
     @IBOutlet private weak var nameLb: UILabel!
     @IBOutlet private weak var underline: UIImageView!
     @IBOutlet private weak var underlineHeight: NSLayoutConstraint!

@@ -7,6 +7,7 @@
 
 import UIKit
 import Swinject
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Dependencies.container = Container()
         Dependencies.registerDependencies()
+        
+        FirebaseApp.configure()
+        
         logger = Dependencies.container.resolve(Logger.self)!
+        
+        let title = "test event"
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+          AnalyticsParameterItemID: "id-\(title)",
+          AnalyticsParameterItemName: title,
+          AnalyticsParameterContentType: "cont"
+          ])
         return true
     }
 

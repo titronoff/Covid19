@@ -9,8 +9,10 @@ import UIKit
 
 class VideoCell: UICollectionViewCell {
 
+    // Dependecies
     private let imageDownloader = Dependencies.container.resolve(ImageDownloader.self)!
     
+    //Outlets
     @IBOutlet private weak var imageLb: UIImageView!
     @IBOutlet private weak var titleLb: UILabel!
     @IBOutlet private weak var descriptionLb: UILabel!

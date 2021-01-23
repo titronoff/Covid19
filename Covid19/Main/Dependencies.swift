@@ -13,6 +13,7 @@ class Dependencies {
     static var container: Container!
     
     static func registerDependencies () {
+        
         //Managers
         Dependencies.container.register(EventManager.self) { _ in EventsManager()}.inObjectScope(.container)
         
