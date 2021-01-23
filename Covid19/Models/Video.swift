@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Videogroups {
+class Videos {
     var groups = [Videogroup]()
     init() {
         groups.append(Videogroup(name: "Covid", keyword: "Covid"))
@@ -29,7 +29,7 @@ struct Videogroup {
         let requestType = "search?"
         let results = 10
         let part = "part=snippet&q=\(keyword)&type=video&videoCaption=closedCaption&maxResults=\(results)"
-        return "\(resourceUrl)\(requestType)\(part)&key=\(ytAPIkey[0])"
+        return "\(resourceUrl)\(requestType)\(part)&key=\(ytAPIkey[1])"
     }
     var list = VideosList()
 }

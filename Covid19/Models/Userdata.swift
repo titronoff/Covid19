@@ -10,4 +10,5 @@ import Foundation
 struct Userdata: Codable {
     var username: String = ""
     var password: String = ""
+    var lastLoginDate: Date = Date()
 }

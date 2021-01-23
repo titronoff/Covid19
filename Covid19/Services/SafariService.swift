@@ -8,9 +8,13 @@
 import UIKit
 import SafariServices
 
+protocol Browser {
+    func OpenUrl(_ url: String?, _ homeVC: UIViewController)
+}
+
 // MARK: Safari browser
-class Browser {
-    class func OpenUrl(_ url: String?, _ homeVC: UIViewController) {
+class SafariService: Browser {
+    func OpenUrl(_ url: String?, _ homeVC: UIViewController) {
         guard let urlString = url else {return}
         guard let targetUrl = URL(string: urlString) else {return}
         let configuration = SFSafariViewController.Configuration()

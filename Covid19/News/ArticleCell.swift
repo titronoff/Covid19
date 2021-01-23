@@ -9,9 +9,11 @@ import UIKit
 
 class ArticleCell: UICollectionViewCell {
 
-    @IBOutlet weak var titleLb: UILabel!
-    @IBOutlet weak var authorLb: RoundedMediaSource!
-    @IBOutlet weak var imageLb: UIImageView!
+    private let imageDownloader = Dependencies.container.resolve(ImageDownloader.self)!
+    
+    @IBOutlet private weak var titleLb: UILabel!
+    @IBOutlet private weak var authorLb: RoundedMediaSource!
+    @IBOutlet private weak var imageLb: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +28,7 @@ class ArticleCell: UICollectionViewCell {
         
         if let imgUrl = item.urlToImage {
             DispatchQueue.global(qos: .background).async {
-                let img = ImageDownloader.downloadImageWithURL(url: imgUrl)
+                let img = self.imageDownloader.downloadImageWithURL(url: imgUrl)
                 DispatchQueue.main.async {
                     self.imageLb.image = img
                 }

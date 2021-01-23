@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UserFieldsValidator {
+    func loginFieldsCheck(_ usernameText: String, _  passwordText: String) -> Bool
+}
+
 class UserFieldsChecker : UserFieldsValidator {
     
     func loginFieldsCheck(_ usernameText: String, _  passwordText: String) -> Bool {

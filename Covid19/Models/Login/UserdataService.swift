@@ -24,12 +24,12 @@ extension LoginVC {
         let keychain = Keychain(service: "com.ivanovski.covid19-token")
         userdata.username = self.usernameInputField.text ?? ""
         userdata.password = passwordInputField.text ?? ""
+        userdata.lastLoginDate = Date()
         
         if userdata.username != "" {
             let encoder = PropertyListEncoder()
             let data = try? encoder.encode(userdata)
             //UserDefaults.standard.setValue(data, forKey: "userData")
-
             keychain[data: "userdata"] = data
         }
             

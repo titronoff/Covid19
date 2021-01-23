@@ -9,17 +9,24 @@ import UIKit
 import SafariServices
 
 class NewsVC: UIViewController {
+    
+    // Dependecies
+    private let network = Dependencies.container.resolve(NewsRepository.self)!
+    private let browser = Dependencies.container.resolve(Browser.self)!
 
+    //Outlets
     @IBOutlet weak var menuCV: UICollectionView!
     @IBOutlet weak var contentCV: UICollectionView!
     @IBOutlet weak var menuHeight: NSLayoutConstraint!
+    private let refresher = UIRefreshControl()
     
-    var news: News = News()
-    var selectedMenuItem = 0
+    //Data
+    private var news: News = News()
+    private var selectedMenuItem = 0
     
-    override func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
-        //self.contentCV.collectionViewLayout.self
+ 
         menuHeight.constant = MenuCell.MenuHeight()
         self.menuCV.register(UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")
         self.menuCV.dataSource = self
@@ -34,40 +41,63 @@ class NewsVC: UIViewController {
     }
 //MARK: Gestures - Swipes right & left
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-        if selectedMenuItem >= 0 && selectedMenuItem < news.items.count-1 {
+        if selectedMenuItem >= 0 && selectedMenuItem < news.groups.count-1 {
             selectedMenuItem += 1
             menuCV.reloadData()
             getNewsData()
-            print(#function)
-
+            contentCV.reloadData()
         }
-        print(news.items.count," ",selectedMenuItem)
     }
     @IBAction func guestRight(_ sender: UISwipeGestureRecognizer) {
         
-        if (selectedMenuItem > 0 && selectedMenuItem < news.items.count) {
+        if (selectedMenuItem > 0 && selectedMenuItem < news.groups.count) {
             selectedMenuItem -= 1
             menuCV.reloadData()
             getNewsData()
-            print(#function)
+            contentCV.reloadData()
         }
-        print(news.items.count," ",selectedMenuItem)
+
+    }
+//MARK: Get Network data
+    @objc private func getNewsData() {
+        refresher.beginRefreshing()
+        network.getNews(news: news, newsGroupeId: selectedMenuItem) {
+            DispatchQueue.main.async {
+                self.refresher.endRefreshing()
+                self.contentCV.reloadData()
+            }
+        }
+    }
+    
+//MARK: Calculations for cells sizing
+        
+    private func calculateArticleCellsize() -> CGSize {
+        let mWidth = UIScreen.main.bounds.width
+        return CGSize(width: (mWidth/2 - 0.5), height: (mWidth/2))
+    }
+        
+//MARK: Configure Refresh Controler
+    private func configureRefreshControler () {
+        self.contentCV.addSubview(refresher)
+        self.refresher.addTarget(self, action:
+                                            #selector(getNewsData),
+                                            for: .valueChanged)
     }
 }
 //MARK: Cells operations
 extension NewsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == menuCV {
-            return news.items.count
+            return news.groups.count
         } else {
-            return news.items[selectedMenuItem].articles.count
+            return news.groups[selectedMenuItem].newsFeed.articles.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == menuCV {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! MenuCell
-            let item = news.items[indexPath.row]
+            let item = news.groups[indexPath.row]
             var selected = false
             if selectedMenuItem == indexPath.row {
                 selected = true
@@ -78,7 +108,7 @@ extension NewsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-            let item = news.items[selectedMenuItem].articles[indexPath.row]
+            let item = news.groups[selectedMenuItem].newsFeed.articles[indexPath.row]
             cell.setupArticle(item: item, group: selectedMenuItem)
             return cell
         }
@@ -89,7 +119,7 @@ extension NewsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
             return calculateArticleCellsize()
         } else {
             var menuTitles = [String]()
-            for title in news.items {
+            for title in news.groups {
                 menuTitles.append(title.name)
             }
             return MenuCell.calculateMenuItemCellsize(menuTitles, indexPath.row)
@@ -100,19 +130,13 @@ extension NewsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == menuCV {
             selectedMenuItem = indexPath.row
-            contentCV.refreshControl?.beginRefreshing()
             getNewsData()
             menuCV.reloadData()
-            //contentCV.reloadData()
+            contentCV.reloadData()
         } else {
-            Browser.OpenUrl(news.items[selectedMenuItem].articles[indexPath.row].url, self)
+            browser.OpenUrl(news.groups[selectedMenuItem].newsFeed.articles[indexPath.row].url, self)
         }
     }
-//MARK: Calculations for cells sizing
-    
-    func calculateArticleCellsize() -> CGSize {
-        let mWidth = UIScreen.main.bounds.width
-        return CGSize(width: (mWidth/2 - 0.5), height: (mWidth/2))
-    }
+
 }
 

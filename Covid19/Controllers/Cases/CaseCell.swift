@@ -8,11 +8,15 @@
 import UIKit
 
 class CaseCell: UITableViewCell {
-
-    @IBOutlet weak var countryLb: UILabel!
-    @IBOutlet weak var infectedLb: UILabel!
-    @IBOutlet weak var recoveredLb: UILabel!
-    @IBOutlet weak var deathLb: UILabel!
+    
+    // Dependecies
+    private let textProcessor = Dependencies.container.resolve(TextProcessor.self)!
+    
+    // Outlets
+    @IBOutlet private weak var countryLb: UILabel!
+    @IBOutlet private weak var infectedLb: UILabel!
+    @IBOutlet private weak var recoveredLb: UILabel!
+    @IBOutlet private weak var deathLb: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,9 +26,9 @@ class CaseCell: UITableViewCell {
 
     func setupCell(_ item: Case){
         countryLb.text = item.country
-        infectedLb.text = " " + Editor.zeroChanger(item.infected ?? 0) + " "
-        recoveredLb.text = " " + Editor.zeroChanger(item.recovered ?? 0) + " "
-        deathLb.text = " " + Editor.zeroChanger(item.deceased ?? 0) + " "
+        infectedLb.text = " " + textProcessor.zeroChanger(item.infected ?? 0) + " "
+        recoveredLb.text = " " + textProcessor.zeroChanger(item.recovered ?? 0) + " "
+        deathLb.text = " " + textProcessor.zeroChanger(item.deceased ?? 0) + " "
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

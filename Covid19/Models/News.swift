@@ -7,12 +7,8 @@
 
 import Foundation
 
-//newsapi.org keys
-
-
-
 class News {
-    var items = [NewsItem]()
+    var groups = [NewsGroupe]()
     let newsApiKey = ["084c67c2b33148828b786875cbed3fc2", //main
                       "836119757a1d4881ad4d1050682f658a", //1
                       "105f39ee084f4a7593a5df52902cba2e", //2
@@ -20,27 +16,25 @@ class News {
                       "0421233d9abb47b1a05338cf4e403508", //4
                       "fdbaf3a7e09b483daad5015193c88b68"] //5
     init() {
-        setup()
-    }
-    func setup() {
         let apiKey = newsApiKey[0]
-        self.items.append(NewsItem(name: "All Top", url: "https://newsapi.org/v2/top-headlines?q=covid&apiKey=\(apiKey)"))
-        self.items.append(NewsItem(name: "BBC", url: "https://newsapi.org/v2/everything?q=covid&sources=bbc-news&apiKey=\(apiKey)"))
-        self.items.append(NewsItem(name: "CBS", url: "https://newsapi.org/v2/everything?q=covid&sources=cbs-news&apiKey=\(apiKey)"))
-        self.items.append(NewsItem(name: "CNN", url: "https://newsapi.org/v2/everything?q=covid&sources=cnn&apiKey=\(apiKey)"))
-        self.items.append(NewsItem(name: "MSNBC", url: "https://newsapi.org/v2/everything?q=covid&sources=msnbc&apiKey=\(apiKey)"))
-        self.items.append(NewsItem(name: "Business insider", url: "https://newsapi.org/v2/everything?q=covid&sources=business-insider&apiKey=\(apiKey)"))
+        self.groups.append(NewsGroupe(id: 0, name: "All Top", url: "https://newsapi.org/v2/top-headlines?q=covid&apiKey=\(apiKey)"))
+        self.groups.append(NewsGroupe(id: 1, name: "BBC", url: "https://newsapi.org/v2/everything?q=covid&sources=bbc-news&apiKey=\(apiKey)"))
+        self.groups.append(NewsGroupe(id: 2, name: "CBS", url: "https://newsapi.org/v2/everything?q=covid&sources=cbs-news&apiKey=\(apiKey)"))
+        self.groups.append(NewsGroupe(id: 3, name: "CNN", url: "https://newsapi.org/v2/everything?q=covid&sources=cnn&apiKey=\(apiKey)"))
+        self.groups.append(NewsGroupe(id: 4, name: "MSNBC", url: "https://newsapi.org/v2/everything?q=covid&sources=msnbc&apiKey=\(apiKey)"))
+        self.groups.append(NewsGroupe(id: 5, name: "Business insider", url: "https://newsapi.org/v2/everything?q=covid&sources=business-insider&apiKey=\(apiKey)"))
     }
 }
-struct NewsItem {
+struct NewsGroupe {
+    var id: Int
     var name: String
     var url: String
-    var articles = [Article]()
+    var newsFeed = NewsFeed()
 }
 struct NewsFeed: Codable {
     var status: String = ""
     var totalResults: Int = 0
-    var articles: [Article]?
+    var articles = [Article]()
     
 }
 struct Article: Codable {

@@ -6,13 +6,16 @@
 //
 
 import UIKit
+protocol ImageDownloader {
+    func downloadImageWithURL(url:String) -> UIImage
+}
 
-class ImageDownloader {
+class ImageDownloaderService: ImageDownloader {
     
-    class func downloadImageWithURL(url:String) -> UIImage! {
+    func downloadImageWithURL(url:String) -> UIImage {
         
         if let data = NSData(contentsOf: NSURL(string: url)! as URL) {
-            return UIImage(data: data as Data)
+            return UIImage(data: data as Data)!
         } else {
             return UIImage()
         }

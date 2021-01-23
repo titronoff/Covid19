@@ -7,7 +7,10 @@
 
 import Foundation
 
-let casesSourceUrl = "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
+class Cases {
+    var list = [Case]()
+    var url = "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
+}
 
 struct Case: Decodable {
     var infected: Int?

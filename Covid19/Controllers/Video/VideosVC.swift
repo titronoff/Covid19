@@ -8,13 +8,19 @@
 import UIKit
 
 class VideosVC: UIViewController {
-   
-
+    
+    // Dependecies
+    private let network = Dependencies.container.resolve(VideosRepository.self)!
+    private let browser = Dependencies.container.resolve(Browser.self)!
+    
+    //Outlets
     @IBOutlet weak var videoListCV: UICollectionView!
     @IBOutlet weak var menuCV: UICollectionView!
     @IBOutlet weak var menuHeight: NSLayoutConstraint!
+    private let refresher = UIRefreshControl()
     
-    var videos:Videogroups = Videogroups()
+    //Data
+    var videos: Videos = Videos()
     var selectedMenuItem = 0
     
     override func viewDidLoad() {
@@ -31,7 +37,44 @@ class VideosVC: UIViewController {
         configureRefreshControler()
         getVideosData()
     }
+    
+//MARK: Get Network data
+    @objc private func getVideosData() {
+        refresher.beginRefreshing()
+        network.getVideos(videos: videos, videosGroupeId: selectedMenuItem) {
+            DispatchQueue.main.async {
+                self.refresher.endRefreshing()
+                self.videoListCV.reloadData()
+            }
+        }
+    }
+    
+//MARK: Calculations for cells sizing
+    func calculateVideoCellsize() -> CGSize {
+        let mWidth = UIScreen.main.bounds.width
+        return CGSize(width: mWidth, height: (mWidth * 0.5625))
+    }
+    //    func calculateMenuItemCellsize(_ item: String) -> CGSize {
+    //        var totalWidth : CGFloat = 0
+    //        let mWidth = UIScreen.main.bounds.width
+    //        for menuItem in self.news.items {
+    //            totalWidth += menuItem.name.size(withAttributes:[.font: UIFont.systemFont(ofSize:12.0)]).width
+    //        }
+    //        let spacer = (mWidth - totalWidth) / CGFloat(news.items.count)
+    //        let itemSize = String(item).size(withAttributes:[.font: UIFont.systemFont(ofSize:12.0)])
+    //        let width = (itemSize.width + spacer)
+    //        return CGSize(width: width , height: menuHeightNSC.constant)
+    //    }
+    
+//MARK: Configure Refresh Controler
+    func configureRefreshControler () {
+        self.videoListCV.addSubview(refresher)
+        self.videoListCV.refreshControl?.addTarget(self, action:
+                                          #selector(getVideosData),
+                                          for: .valueChanged)
+    }
 }
+//MARK: Cells operations
 extension VideosVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == menuCV {
@@ -63,11 +106,11 @@ extension VideosVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         if collectionView == menuCV {
             selectedMenuItem = indexPath.row
             getVideosData()
-            //videoListCV.reloadData()
+            videoListCV.reloadData()
             menuCV.reloadData()
         } else {
         let url = "https://www.youtube.com/watch?v=\(videos.groups[selectedMenuItem].list.items[indexPath.row].id.videoId)"
-        Browser.OpenUrl(url, self)
+            browser.OpenUrl(url, self)
        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -81,20 +124,4 @@ extension VideosVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             return calculateVideoCellsize()
         }
     }
-//MARK: Calculations for cells sizing
-    func calculateVideoCellsize() -> CGSize {
-        let mWidth = UIScreen.main.bounds.width
-        return CGSize(width: mWidth, height: (mWidth * 0.5625))
-    }
-//    func calculateMenuItemCellsize(_ item: String) -> CGSize {
-//        var totalWidth : CGFloat = 0
-//        let mWidth = UIScreen.main.bounds.width
-//        for menuItem in self.news.items {
-//            totalWidth += menuItem.name.size(withAttributes:[.font: UIFont.systemFont(ofSize:12.0)]).width
-//        }
-//        let spacer = (mWidth - totalWidth) / CGFloat(news.items.count)
-//        let itemSize = String(item).size(withAttributes:[.font: UIFont.systemFont(ofSize:12.0)])
-//        let width = (itemSize.width + spacer)
-//        return CGSize(width: width , height: menuHeightNSC.constant)
-//    }
 }

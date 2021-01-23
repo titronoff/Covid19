@@ -11,12 +11,12 @@ import Swinject
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var logger : Logger?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Dependencies.container = Container()
         Dependencies.registerDependencies()
-        let loger = Loger()
+        logger = Dependencies.container.resolve(Logger.self)!
         return true
     }
 

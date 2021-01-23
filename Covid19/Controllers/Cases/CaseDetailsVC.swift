@@ -8,7 +8,11 @@
 import UIKit
 
 class CaseDetailsVC: UIViewController {
-
+    
+    // Dependecies
+    private let textProcessor = Dependencies.container.resolve(TextProcessor.self)!
+    
+    //Outlest
     @IBOutlet weak var countryLb: UILabel!
     @IBOutlet weak var infectedLb: UILabel!
     @IBOutlet weak var recoveredLb: UILabel!
@@ -21,11 +25,10 @@ class CaseDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationController?.navigationBar.backItem?.backButtonTitle = "test"
         countryLb.text = caseToShow.country
-        infectedLb.text = " " + Editor.zeroChanger(caseToShow.infected ?? 0) + " "
-        recoveredLb.text = " " + Editor.zeroChanger(caseToShow.recovered ?? 0) + " "
-        deathLb.text = " " + Editor.zeroChanger(caseToShow.deceased ?? 0) + " "
+        infectedLb.text = " " + textProcessor.zeroChanger(caseToShow.infected ?? 0) + " "
+        recoveredLb.text = " " + textProcessor.zeroChanger(caseToShow.recovered ?? 0) + " "
+        deathLb.text = " " + textProcessor.zeroChanger(caseToShow.deceased ?? 0) + " "
         if let updateDate = caseToShow.updated {
             updatedLb.text = "\(updateDate.dropLast(14))"
         } else {

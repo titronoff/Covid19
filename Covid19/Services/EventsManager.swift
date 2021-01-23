@@ -12,18 +12,14 @@ protocol EventManager {
     func notify()
 }
 
-protocol EventListener {
+protocol EventListener: NSObjectProtocol {
     func update()
 }
 
-
-
 enum EventType {
-    case loin
+    case login
     case logout
 }
-
-
 
 class EventsManager: EventManager {
     
@@ -33,6 +29,14 @@ class EventsManager: EventManager {
         listeners.append(listener)
     }
     
+    func unsubscribe (listener: EventListener){
+        if let indexx = listeners.firstIndex(where: { (findListener) -> Bool in
+            findListener === listener
+        }) {
+            listeners.remove(at: indexx)
+        }
+    }
+    
     func notify () {
         listeners.forEach { listener in
             listener.update()
@@ -40,12 +44,3 @@ class EventsManager: EventManager {
     }
 }
 
-class Loger: EventListener {
-    init() {
-        Dependencies.container.resolve(EventManager.self)!.subscribe(listener: self)
-    }
-    
-    func update() {
-        print("Logout event")
-    }
-}
