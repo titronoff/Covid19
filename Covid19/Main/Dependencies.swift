@@ -24,6 +24,8 @@ class Dependencies {
         Dependencies.container.register(Browser.self) { _ in SafariService()}
         Dependencies.container.register(ImageDownloader.self) { _ in ImageDownloaderService()}
         Dependencies.container.register(Logger.self) { _ in LoggerService()}
+        Dependencies.container.register(UserdataValidator.self) { _ in FirebaseUserdata()}
+        Dependencies.container.register(UserdataSaver.self) { _ in FirebaseUserdata()}
         
         //UI
         Dependencies.container.register(UserFieldsValidator.self) { _ in UserFieldsChecker()}

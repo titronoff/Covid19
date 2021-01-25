@@ -8,6 +8,7 @@
 import UIKit
 import SafariServices
 import Swinject
+import AVKit
 
 var userdata = Userdata()
 
@@ -16,34 +17,48 @@ class LoginVC: UIViewController {
     // Dependecies
     private let userValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
     private let styleProvider = Dependencies.container.resolve(UIstyle.self)!
+    private let userdataValidator = Dependencies.container.resolve(UserdataValidator.self)!
     
     //Outlets
+    @IBOutlet weak var leadingSpace: NSLayoutConstraint!
     @IBOutlet  weak var usernameInputField: UITextField!
     @IBOutlet  weak var passwordInputField: UITextField!
-    @IBOutlet private weak var loginButton: UIButton!
-    @IBOutlet private weak var c2: NSLayoutConstraint!
+    @IBOutlet private weak var loginButton: RoundedButton!
+    @IBOutlet weak var errorMessage: UILabel! {
+        didSet{
+            errorMessage.alpha = 0
+        }
+    }
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var SignInButton: RoundedButton!{
+        didSet{
+            SignInButton.layer.borderColor = UIColor.systemBlue.cgColor
+        }
+    }
+    var videoPlayer: AVPlayer?
+    var videoPlayerLayer: AVPlayerLayer?
     
 // MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
-        c2.constant += view.bounds.height
+        leadingSpace.constant += view.bounds.width
+        //setUpVideo()
     }
     override func viewDidAppear(_ animated: Bool) {
-        c2.constant -= view.bounds.height
-        UIView.animate(withDuration: 1, delay: 0) {
+        leadingSpace.constant -= view.bounds.width
+        UIView.animate(withDuration: 0.5, delay: 0) {
             self.view.layoutIfNeeded()
         }
     }
 // set up and evaluate
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideErrorMessage()
         setStyle()
         getLoginData()
         loginButtonSwitcher ()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
-
     
     @objc private func kbDidShow(notification: Notification) {
         guard let userInfo = notification.userInfo else {return}
@@ -56,17 +71,36 @@ class LoginVC: UIViewController {
         (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
     }
     
+    @IBAction private func signUpPressed(_ sender: RoundedButton) {
+        let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "signUpVC") as! signUpVC
+        navigationController?.pushViewController(signUpVC, animated: true)
+    }
+    
     @IBAction private func loginPressed(_ sender: UIButton) {
-        saveLoginData()
-        let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
-        self.navigationController?.pushViewController(tabVC, animated: true)
+        self.hideErrorMessage()
+        indicatorState(true)
+        let login = usernameInputField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pswd = passwordInputField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        userdataValidator.userLogIn(email: login, password: pswd) {requestResult in
+            if requestResult != nil {
+                self.indicatorState(false)
+                self.showError(requestResult!)
+            } else {
+                self.indicatorState(false)
+                self.saveLoginData()
+                let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
+                self.navigationController?.pushViewController(tabVC, animated: true)
+            }
+        }
     }
 
     @IBAction private func usernameChanged(_ sender: UITextField) {
+        hideErrorMessage()
         loginButtonSwitcher()
     }
 
     @IBAction private func pswdChanged(_ sender: UITextField) {
+        hideErrorMessage()
         loginButtonSwitcher()
     }
     
@@ -85,7 +119,43 @@ class LoginVC: UIViewController {
         self.usernameInputField.textColor = styleProvider.getTextColor()
         self.passwordInputField.textColor = styleProvider.getTextColor()
     }
-    
+    private func showError(_ message: String) {
+        errorMessage.text = message
+        errorMessage.alpha = 1
+    }
+    private func hideErrorMessage() {
+        errorMessage.alpha = 0
+        errorMessage.text = ""
+    }
+    private func indicatorState (_ state: Bool) {
+        if state {
+            indicator.startAnimating()
+        } else {
+            indicator.stopAnimating()
+        }
+    }
+    private func setUpVideo() {
+        
+        //Get the path and URL to the resource
+        let bundlePath = Bundle.main.path(forResource: "video", ofType: "mp4")
+        guard bundlePath != nil else {return}
+        let url = URL(fileURLWithPath: bundlePath!)
+        
+        //create video player
+        let item = AVPlayerItem(url: url)
+        videoPlayer = AVPlayer(playerItem: item)
+        
+        //create layer
+        videoPlayerLayer = AVPlayerLayer(player: videoPlayer!)
+        
+        //Adjusting size
+        videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*2.5,
+                                         y: -self.view.frame.size.height*0.056,
+                                         width: self.view.frame.size.width*4.5,
+                                         height: self.view.frame.size.height)
+        view.layer.insertSublayer(videoPlayerLayer!, at: 0)
+        //Play
+        videoPlayer?.playImmediately(atRate: 1)
+
+    }
 }
-
-

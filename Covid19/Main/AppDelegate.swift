@@ -22,12 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         logger = Dependencies.container.resolve(Logger.self)!
         
-        let title = "test event"
-        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-          AnalyticsParameterItemID: "id-\(title)",
-          AnalyticsParameterItemName: title,
-          AnalyticsParameterContentType: "cont"
-          ])
         return true
     }
 

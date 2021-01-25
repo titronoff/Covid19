@@ -16,6 +16,12 @@
 		E945F643255EE03700BD5293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E945F642255EE03700BD5293 /* Main.storyboard */; };
 		E945F647255EE05000BD5293 /* Cases.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E945F646255EE05000BD5293 /* Cases.storyboard */; };
 		E9700CF425BC57C900781212 /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9700CF325BC57C900781212 /* LoggerService.swift */; };
+		E9700DC625BD9C9400781212 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9700DC525BD9C9400781212 /* GoogleService-Info.plist */; };
+		E9700DFA25BDA65100781212 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9700DF925BDA65100781212 /* Login.storyboard */; };
+		E9700E2E25BDA90000781212 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9700E2D25BDA90000781212 /* signUpVC.swift */; };
+		E9700E4D25BDE03000781212 /* FirebaseUserdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9700E4C25BDE03000781212 /* FirebaseUserdata.swift */; };
+		E9700E5125BF46FB00781212 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9700E5025BF46FB00781212 /* Signup.storyboard */; };
+		E9700E5925BF6F3100781212 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E9700E5825BF6F3100781212 /* video.mp4 */; };
 		E99441A625666EC900DCFE39 /* CaseDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99441A525666EC900DCFE39 /* CaseDetails.storyboard */; };
 		E99441EE2566C05400DCFE39 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99441E72566C05400DCFE39 /* News.storyboard */; };
 		E99441EF2566C05400DCFE39 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99441E82566C05400DCFE39 /* ArticleCell.swift */; };
@@ -63,6 +69,12 @@
 		E945F642255EE03700BD5293 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E945F646255EE05000BD5293 /* Cases.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cases.storyboard; sourceTree = "<group>"; };
 		E9700CF325BC57C900781212 /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
+		E9700DC525BD9C9400781212 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9700DF925BDA65100781212 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E9700E2D25BDA90000781212 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
+		E9700E4C25BDE03000781212 /* FirebaseUserdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserdata.swift; sourceTree = "<group>"; };
+		E9700E5025BF46FB00781212 /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		E9700E5825BF6F3100781212 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = ../../../../../Downloads/video.mp4; sourceTree = "<group>"; };
 		E99441A525666EC900DCFE39 /* CaseDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaseDetails.storyboard; sourceTree = "<group>"; };
 		E99441E72566C05400DCFE39 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		E99441E82566C05400DCFE39 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCell.swift; path = News/ArticleCell.swift; sourceTree = "<group>"; };
@@ -133,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D42790254BFF4D000CDF5E /* LoginVC.swift */,
+				E9700E2D25BDA90000781212 /* signUpVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -141,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				E945F642255EE03700BD5293 /* Main.storyboard */,
+				E9700DF925BDA65100781212 /* Login.storyboard */,
+				E9700E5025BF46FB00781212 /* Signup.storyboard */,
 				E99441E92566C05400DCFE39 /* MenuCell.xib */,
 				E9A14359256A949A00A370F4 /* VideoCell.xib */,
 				E9D75C7D256944FC000A6086 /* Video.storyboard */,
@@ -158,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				E92A5CDD25AE05AF00BFAF70 /* UserFieldsChecker.swift */,
+				E9700E4C25BDE03000781212 /* FirebaseUserdata.swift */,
 				E9EBD587255ED45C00B42B93 /* UserdataService.swift */,
 			);
 			path = Login;
@@ -277,6 +293,7 @@
 		E9EBD58A255ED89E00B42B93 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				E9700DC525BD9C9400781212 /* GoogleService-Info.plist */,
 				E9D4279A254BFF4F000CDF5E /* Info.plist */,
 			);
 			path = Settings;
@@ -293,6 +310,7 @@
 		E9F5F71C255ECFEE00D3966C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9700E5825BF6F3100781212 /* video.mp4 */,
 				E9D42795254BFF4F000CDF5E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -321,6 +339,7 @@
 				E9D42786254BFF4D000CDF5E /* Frameworks */,
 				E9D42787254BFF4D000CDF5E /* Resources */,
 				F74062228406111046B353C0 /* [CP] Embed Pods Frameworks */,
+				E9700D3025BC7E5A00781212 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -368,7 +387,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9700DC625BD9C9400781212 /* GoogleService-Info.plist in Resources */,
 				E945F647255EE05000BD5293 /* Cases.storyboard in Resources */,
+				E9700DFA25BDA65100781212 /* Login.storyboard in Resources */,
+				E9700E5925BF6F3100781212 /* video.mp4 in Resources */,
 				E9EBD58E255ED97900B42B93 /* LaunchScreen.storyboard in Resources */,
 				E9F5F70E255ECDEC00D3966C /* Profile.storyboard in Resources */,
 				E99441A625666EC900DCFE39 /* CaseDetails.storyboard in Resources */,
@@ -377,6 +399,7 @@
 				E9D75C7E256944FC000A6086 /* Video.storyboard in Resources */,
 				E99442E52568256500DCFE39 /* CaseCell.xib in Resources */,
 				E9D42796254BFF4F000CDF5E /* Assets.xcassets in Resources */,
+				E9700E5125BF46FB00781212 /* Signup.storyboard in Resources */,
 				E9A1435B256A949A00A370F4 /* VideoCell.xib in Resources */,
 				E99441F12566C05400DCFE39 /* ArticleCell.xib in Resources */,
 				E99441F02566C05400DCFE39 /* MenuCell.xib in Resources */,
@@ -408,6 +431,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E9700D3025BC7E5A00781212 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		F74062228406111046B353C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,6 +479,7 @@
 				E939E00D25619DD100B65AF8 /* Case.swift in Sources */,
 				E9B4C57C25B7495300859A03 /* StyleProvider.swift in Sources */,
 				E99DB7CC256EC5EB00E6317D /* TextProcessorService.swift in Sources */,
+				E9700E2E25BDA90000781212 /* signUpVC.swift in Sources */,
 				E9D42803254EDAC6000CDF5E /* ProfileVC.swift in Sources */,
 				E92A5CEA25B0C15100BFAF70 /* Dependencies.swift in Sources */,
 				E9D75C8C25697D96000A6086 /* SafariService.swift in Sources */,
@@ -457,6 +500,7 @@
 				E945F1BF25B9EC500019F6A1 /* EventsManager.swift in Sources */,
 				E9C8E24A256D792100D08966 /* RoundedMediaSource.swift in Sources */,
 				E99441EF2566C05400DCFE39 /* ArticleCell.swift in Sources */,
+				E9700E4D25BDE03000781212 /* FirebaseUserdata.swift in Sources */,
 				E9F4D80A256D5B2800425BB3 /* ColoredText.swift in Sources */,
 				E9D4280A254EE267000CDF5E /* CasesTVC.swift in Sources */,
 				E92C13722554495500FAB7BD /* Userdata.swift in Sources */,
@@ -590,6 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = Covid19/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = H4K78UGH6X;
 				INFOPLIST_FILE = "$(SRCROOT)/Covid19/Settings/Info.plist";
@@ -598,10 +643,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Pavel-Ivanovski.Covid19";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Pavel-Ivanovski.Covid19";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -620,10 +665,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Pavel-Ivanovski.Covid19";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Pavel-Ivanovski.Covid19";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

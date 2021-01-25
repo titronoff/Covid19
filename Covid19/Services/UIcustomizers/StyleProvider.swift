@@ -22,7 +22,7 @@ class StyleProvider: UIstyle {
             let color = UIColor.white
             return color
         } else {
-            let color = UIColor.black
+            let color = UIColor.white
             return color
         }
     }
@@ -32,7 +32,7 @@ class StyleProvider: UIstyle {
             let color = UIColor.black
             return color
         } else {
-            let color = UIColor.orange
+            let color = UIColor.black
             return color
         }
     }

@@ -11,6 +11,8 @@ import Swinject
 class ProfileVC: UIViewController {
     
     //Outlets
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var lastLoginLb: UILabel!
     @IBOutlet weak var logoutBtn: RoundedButton! {
@@ -18,7 +20,6 @@ class ProfileVC: UIViewController {
             logoutBtn.layer.borderColor = UIColor.systemBlue.cgColor
         }
     }
-    
     @IBOutlet weak var LogoutbottomNSC: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +35,8 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         usernameLabel.text = userdata.username
-        //lastLoginLb.text = "\(String(userdata.lastLoginDate).dropLast(14))"
+        nameLabel.text = userdata.firstName
+        lastNameLabel.text = userdata.lastName
         lastLoginLb.text = "\(userdata.lastLoginDate)"
 
     }

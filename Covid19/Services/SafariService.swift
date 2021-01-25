@@ -15,8 +15,8 @@ protocol Browser {
 // MARK: Safari browser
 class SafariService: Browser {
     func OpenUrl(_ url: String?, _ homeVC: UIViewController) {
-        guard let urlString = url else {return}
-        guard let targetUrl = URL(string: urlString) else {return}
+        guard let urlString = url else {print(#function, "urlString error"); return}
+        guard let targetUrl = URL(string: urlString) else {print(#function, "URL error"); return}
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
         let safariVC = SFSafariViewController(url: targetUrl, configuration: configuration)

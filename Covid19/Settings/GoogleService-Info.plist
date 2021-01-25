@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>826029532783-8riprmf4i0kfr9bu9ocln3j4mams9hib.apps.googleusercontent.com</string>
+	<string>333802029529-3n911s2oafdpj192kk48itjin2r66sr2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.826029532783-8riprmf4i0kfr9bu9ocln3j4mams9hib</string>
+	<string>com.googleusercontent.apps.333802029529-3n911s2oafdpj192kk48itjin2r66sr2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDZySkuQaqOBxP7VSF3HmMFvtQjDtWlfkw</string>
+	<string>AIzaSyCbyLWO4R2cSQEqlJbbwikswOO_uq6T2pU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>826029532783</string>
+	<string>333802029529</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Pavel-Ivanovski.Covid19</string>
+	<string>com.Pavel-Ivanovski.Covid19</string>
 	<key>PROJECT_ID</key>
-	<string>covid19-296312</string>
+	<string>covid19-bfb6e</string>
 	<key>STORAGE_BUCKET</key>
-	<string>covid19-296312.appspot.com</string>
+	<string>covid19-bfb6e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:826029532783:ios:a9b2dc7c69311c92aa8f9a</string>
+	<string>1:333802029529:ios:b60e407ff29b8c162a59c8</string>
 </dict>
 </plist>

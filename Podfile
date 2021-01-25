@@ -8,7 +8,12 @@ target 'Covid19' do
   # Pods for Covid19
 pod 'KeychainAccess'
 pod 'Swinject'
-pod 'Firebase/Analytics'
+pod 'Firebase/Core'
 pod 'Firebase/Crashlytics'
+pod 'Firebase/Analytics'
+pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
+pod 'FirebaseFirestoreSwift'
+#pod 'FirebaseUI/Facebook'
+
 end

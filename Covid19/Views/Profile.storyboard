@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dV-tp-ByV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dV-tp-ByV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,34 +37,74 @@
                                     <action selector="logoutPressed:" destination="6dV-tp-ByV" eventType="touchUpInside" id="uQl-we-hXZ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9YK-Tg-oSr">
-                                <rect key="frame" x="145.5" y="202" width="123" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oDt-sL-Tnw">
+                                <rect key="frame" x="50" y="182" width="314" height="115"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last login session: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqb-Ri-cy9">
-                                        <rect key="frame" x="0.0" y="0.0" width="123" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df6-9R-dP8">
-                                        <rect key="frame" x="44" y="17" width="35.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AXx-fT-Gvl">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuK-Fo-Su5">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg1-W3-BpL">
+                                                <rect key="frame" x="162" y="0.0" width="152" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mCa-hf-7GR">
+                                        <rect key="frame" x="0.0" y="40.5" width="314" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastname" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-8D-a1J">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGU-x9-OW6">
+                                                <rect key="frame" x="162" y="0.0" width="152" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9YK-Tg-oSr">
+                                        <rect key="frame" x="0.0" y="81" width="314" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last login session: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqb-Ri-cy9">
+                                                <rect key="frame" x="95.5" y="0.0" width="123" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df6-9R-dP8">
+                                                <rect key="frame" x="139.5" y="17" width="35.5" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9os-x9-8Rw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9os-x9-8Rw" firstAttribute="trailing" secondItem="oDt-sL-Tnw" secondAttribute="trailing" constant="50" id="Erf-0T-brC"/>
                             <constraint firstItem="INA-pK-YDD" firstAttribute="top" secondItem="9os-x9-8Rw" secondAttribute="top" constant="52" id="GaH-NZ-9Mh"/>
+                            <constraint firstItem="oDt-sL-Tnw" firstAttribute="leading" secondItem="9os-x9-8Rw" secondAttribute="leading" constant="50" id="NP8-YB-IxN"/>
                             <constraint firstItem="9os-x9-8Rw" firstAttribute="trailing" secondItem="lED-SN-ZhZ" secondAttribute="trailing" constant="40" id="Xti-FS-Z0C"/>
                             <constraint firstItem="INA-pK-YDD" firstAttribute="centerX" secondItem="iwi-7j-TaG" secondAttribute="centerX" id="dJY-lY-QsH"/>
-                            <constraint firstItem="9YK-Tg-oSr" firstAttribute="centerX" secondItem="iwi-7j-TaG" secondAttribute="centerX" id="kJR-bi-Xjz"/>
                             <constraint firstItem="lED-SN-ZhZ" firstAttribute="leading" secondItem="9os-x9-8Rw" secondAttribute="leading" constant="40" id="krw-Hd-mFw"/>
                             <constraint firstItem="9os-x9-8Rw" firstAttribute="bottom" secondItem="lED-SN-ZhZ" secondAttribute="bottom" constant="30" id="oxM-4K-bQW"/>
-                            <constraint firstItem="9YK-Tg-oSr" firstAttribute="top" secondItem="INA-pK-YDD" secondAttribute="bottom" constant="70" id="rUl-2H-EZp"/>
+                            <constraint firstItem="oDt-sL-Tnw" firstAttribute="top" secondItem="INA-pK-YDD" secondAttribute="bottom" constant="50" id="r9n-j9-YoH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="homekit" catalog="system" id="V6R-1w-tMa"/>
@@ -73,7 +113,9 @@
                     <connections>
                         <outlet property="LogoutbottomNSC" destination="oxM-4K-bQW" id="dml-Ts-zX3"/>
                         <outlet property="lastLoginLb" destination="df6-9R-dP8" id="s0K-f2-cqp"/>
+                        <outlet property="lastNameLabel" destination="HGU-x9-OW6" id="Y4m-Fz-R6U"/>
                         <outlet property="logoutBtn" destination="lED-SN-ZhZ" id="SaI-y6-LH4"/>
+                        <outlet property="nameLabel" destination="gg1-W3-BpL" id="z8b-8D-d91"/>
                         <outlet property="usernameLabel" destination="INA-pK-YDD" id="hDh-Lz-bdj"/>
                     </connections>
                 </viewController>
@@ -89,6 +131,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
