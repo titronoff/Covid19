@@ -111,14 +111,6 @@
             </objects>
             <point key="canvasLocation" x="1204" y="117"/>
         </scene>
-        <!--signUpVC-->
-        <scene sceneID="5ZF-ly-oiJ">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="signUpVC" storyboardName="signUpVC" referencedIdentifier="signUpVC" id="2Az-WR-85A" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BVO-T3-634" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1872" y="117"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

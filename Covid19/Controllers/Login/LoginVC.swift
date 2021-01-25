@@ -72,7 +72,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction private func signUpPressed(_ sender: RoundedButton) {
-        let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "signUpVC") as! signUpVC
+        let signUpVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "signUpVC") as! signUpVC
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     
@@ -133,29 +133,5 @@ class LoginVC: UIViewController {
         } else {
             indicator.stopAnimating()
         }
-    }
-    private func setUpVideo() {
-        
-        //Get the path and URL to the resource
-        let bundlePath = Bundle.main.path(forResource: "video", ofType: "mp4")
-        guard bundlePath != nil else {return}
-        let url = URL(fileURLWithPath: bundlePath!)
-        
-        //create video player
-        let item = AVPlayerItem(url: url)
-        videoPlayer = AVPlayer(playerItem: item)
-        
-        //create layer
-        videoPlayerLayer = AVPlayerLayer(player: videoPlayer!)
-        
-        //Adjusting size
-        videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*2.5,
-                                         y: -self.view.frame.size.height*0.056,
-                                         width: self.view.frame.size.width*4.5,
-                                         height: self.view.frame.size.height)
-        view.layer.insertSublayer(videoPlayerLayer!, at: 0)
-        //Play
-        videoPlayer?.playImmediately(atRate: 1)
-
     }
 }
