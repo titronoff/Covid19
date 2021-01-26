@@ -21,7 +21,6 @@
 		E9700E2E25BDA90000781212 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9700E2D25BDA90000781212 /* signUpVC.swift */; };
 		E9700E4D25BDE03000781212 /* FirebaseUserdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9700E4C25BDE03000781212 /* FirebaseUserdata.swift */; };
 		E9700E5125BF46FB00781212 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9700E5025BF46FB00781212 /* Signup.storyboard */; };
-		E9700E5925BF6F3100781212 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E9700E5825BF6F3100781212 /* video.mp4 */; };
 		E99441A625666EC900DCFE39 /* CaseDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99441A525666EC900DCFE39 /* CaseDetails.storyboard */; };
 		E99441EE2566C05400DCFE39 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99441E72566C05400DCFE39 /* News.storyboard */; };
 		E99441EF2566C05400DCFE39 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99441E82566C05400DCFE39 /* ArticleCell.swift */; };
@@ -74,7 +73,6 @@
 		E9700E2D25BDA90000781212 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		E9700E4C25BDE03000781212 /* FirebaseUserdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserdata.swift; sourceTree = "<group>"; };
 		E9700E5025BF46FB00781212 /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
-		E9700E5825BF6F3100781212 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = ../../../../../Downloads/video.mp4; sourceTree = "<group>"; };
 		E99441A525666EC900DCFE39 /* CaseDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaseDetails.storyboard; sourceTree = "<group>"; };
 		E99441E72566C05400DCFE39 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		E99441E82566C05400DCFE39 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCell.swift; path = News/ArticleCell.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 		E9F5F71C255ECFEE00D3966C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E9700E5825BF6F3100781212 /* video.mp4 */,
 				E9D42795254BFF4F000CDF5E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -340,6 +337,7 @@
 				E9D42787254BFF4D000CDF5E /* Resources */,
 				F74062228406111046B353C0 /* [CP] Embed Pods Frameworks */,
 				E9700D3025BC7E5A00781212 /* ShellScript */,
+				42780CC784EAD8E1AA75AE9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -390,7 +388,6 @@
 				E9700DC625BD9C9400781212 /* GoogleService-Info.plist in Resources */,
 				E945F647255EE05000BD5293 /* Cases.storyboard in Resources */,
 				E9700DFA25BDA65100781212 /* Login.storyboard in Resources */,
-				E9700E5925BF6F3100781212 /* video.mp4 in Resources */,
 				E9EBD58E255ED97900B42B93 /* LaunchScreen.storyboard in Resources */,
 				E9F5F70E255ECDEC00D3966C /* Profile.storyboard in Resources */,
 				E99441A625666EC900DCFE39 /* CaseDetails.storyboard in Resources */,
@@ -429,6 +426,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42780CC784EAD8E1AA75AE9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Covid19/Pods-Covid19-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Covid19/Pods-Covid19-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Covid19/Pods-Covid19-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9700D3025BC7E5A00781212 /* ShellScript */ = {

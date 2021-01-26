@@ -8,11 +8,15 @@
 import UIKit
 import Swinject
 import Firebase
+import GoogleSignIn
+
+var loggeidIn: Bool = false
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+   
     var logger : Logger?
+    var googleSignIn: GoogleSignIn?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Dependencies.container = Container()
@@ -21,10 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         logger = Dependencies.container.resolve(Logger.self)!
+        googleSignIn = Dependencies.container.resolve(GoogleSignIn.self)!
+        
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance()?.delegate = self
         
         return true
     }
-
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        googleSignIn?.googleUserLogin(signIn: signIn, user: user, error: error)
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

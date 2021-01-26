@@ -7,6 +7,7 @@
 
 import UIKit
 import Swinject
+import Firebase
 
 class ProfileVC: UIViewController {
     
@@ -44,5 +45,13 @@ class ProfileVC: UIViewController {
     @IBAction func logoutPressed(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
         Dependencies.container.resolve(EventManager.self)?.notify()
+        
+        let firebase = Auth.auth()
+        do {
+            try firebase.signOut()
+        } catch let signOutErr as NSError {
+            print(signOutErr.localizedDescription)
+            return
+        }
     }
 }

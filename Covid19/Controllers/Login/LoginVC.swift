@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 import Swinject
-import AVKit
+import GoogleSignIn
 
 var userdata = Userdata()
 
@@ -35,13 +35,16 @@ class LoginVC: UIViewController {
             SignInButton.layer.borderColor = UIColor.systemBlue.cgColor
         }
     }
-    var videoPlayer: AVPlayer?
-    var videoPlayerLayer: AVPlayerLayer?
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
     
 // MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
         leadingSpace.constant += view.bounds.width
-        //setUpVideo()
+        if loggeidIn {
+            self.saveLoginData()
+            let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
+            self.navigationController?.pushViewController(tabVC, animated: true)
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         leadingSpace.constant -= view.bounds.width
@@ -58,6 +61,9 @@ class LoginVC: UIViewController {
         loginButtonSwitcher ()
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @objc private func kbDidShow(notification: Notification) {
