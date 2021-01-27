@@ -4,80 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LoginViewController-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" userLabel="LoginViewController" customClass="LoginVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zTr-Ac-SIw">
-                                <rect key="frame" x="40" y="351" width="334" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="pswdChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="FkA-Kd-p1O"/>
-                                    <action selector="pswdChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="bAa-yd-IYe"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcL-qV-Cx0" customClass="RoundedButton" customModule="Covid19" customModuleProvider="target">
-                                <rect key="frame" x="40" y="415" width="334" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="KIy-Mi-4fm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" systemColor="systemBlueColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPz-Hy-Mam"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fCc-vL-wgb">
-                                <rect key="frame" x="40" y="287" width="334" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="usernameChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZBr-Hp-0Tq"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fCc-vL-wgb" secondAttribute="trailing" constant="40" id="BGu-2C-MQI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gcL-qV-Cx0" secondAttribute="trailing" constant="40" id="F7Q-hc-cSC"/>
-                            <constraint firstItem="zTr-Ac-SIw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Feq-G5-qiO"/>
-                            <constraint firstItem="gcL-qV-Cx0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="NT5-sT-ZE7"/>
-                            <constraint firstItem="fCc-vL-wgb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="V0s-80-MPi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zTr-Ac-SIw" secondAttribute="trailing" constant="40" id="Yg2-qh-wMr"/>
-                            <constraint firstItem="zTr-Ac-SIw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hBp-79-A6f"/>
-                            <constraint firstItem="gcL-qV-Cx0" firstAttribute="top" secondItem="zTr-Ac-SIw" secondAttribute="bottom" constant="30" id="hPl-d2-gHh"/>
-                            <constraint firstItem="zTr-Ac-SIw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tWa-5A-LYl"/>
-                            <constraint firstItem="zTr-Ac-SIw" firstAttribute="top" secondItem="fCc-vL-wgb" secondAttribute="bottom" constant="30" id="w2K-Yh-QhL"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="czR-Kq-R7v"/>
-                    <connections>
-                        <outlet property="c2" destination="tWa-5A-LYl" id="5dQ-9D-yJg"/>
-                        <outlet property="loginButton" destination="gcL-qV-Cx0" id="kHj-1C-VXa"/>
-                        <outlet property="passwordInputField" destination="zTr-Ac-SIw" id="oXi-wT-6fC"/>
-                        <outlet property="usernameInputField" destination="fCc-vL-wgb" id="5wp-m7-khB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1183" y="117"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="k45-PM-jTO">
             <objects>
@@ -110,12 +39,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WF7-Yr-uFj"/>
+                        <segue destination="NsR-oV-Vve" kind="relationship" relationship="rootViewController" id="NGM-FL-xA9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jh-gg-jXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="414" y="117"/>
+        </scene>
+        <!--loginSB-->
+        <scene sceneID="Kdk-XU-iRJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="loginSB" id="NsR-oV-Vve" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4Bc-cm-rCE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-vd-sxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="141"/>
         </scene>
         <!--Cases-->
         <scene sceneID="Xuj-oe-yIo">
@@ -158,15 +97,4 @@
             <point key="canvasLocation" x="1693" y="530"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
