@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="414" y="117"/>
         </scene>
-        <!--loginSB-->
+        <!--loginSBMVVM-->
         <scene sceneID="Kdk-XU-iRJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="loginSB" id="NsR-oV-Vve" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="loginSBMVVM" storyboardName="LoginMVVM" referencedIdentifier="loginSBMVVM" id="NsR-oV-Vve" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4Bc-cm-rCE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-vd-sxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -49,7 +49,7 @@ class FirebaseUserdata: UserdataValidator, UserdataSaver, GoogleSignIn {
                     return
                 } else {
                     guard let authDataResult = authDataResult else {return}
-                    //Chel if user exits
+                    //Chek if user exits
                     Firestore.firestore().collection("users").whereField("uid", isEqualTo: authDataResult.user.uid).getDocuments() { (querySnapshot, err) in
                         if querySnapshot?.count == 0 {
                                 //no user exists - create new record
