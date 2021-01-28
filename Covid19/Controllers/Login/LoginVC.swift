@@ -18,6 +18,7 @@ class LoginVC: UIViewController {
     private let userValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
     private let styleProvider = Dependencies.container.resolve(UIstyle.self)!
     private let userdataValidator = Dependencies.container.resolve(UserdataValidator.self)!
+    private let keychainUserdata = KeychainUserdataService()
     
     //Outlets
     @IBOutlet weak var leadingSpace: NSLayoutConstraint!
@@ -40,11 +41,6 @@ class LoginVC: UIViewController {
 // MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
         leadingSpace.constant += view.bounds.width
-        if loggeidIn {
-            self.saveLoginData()
-            let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
-            self.navigationController?.pushViewController(tabVC, animated: true)
-        }
     }
     override func viewDidAppear(_ animated: Bool) {
         leadingSpace.constant -= view.bounds.width
@@ -57,13 +53,12 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         hideErrorMessage()
         setStyle()
-        getLoginData()
+        usernameInputField.text = keychainUserdata.getLoginData()
         loginButtonSwitcher ()
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
     }
     
     @objc private func kbDidShow(notification: Notification) {
@@ -93,13 +88,17 @@ class LoginVC: UIViewController {
                 self.showError(requestResult!)
             } else {
                 self.indicatorState(false)
-                self.saveLoginData()
+                self.keychainUserdata.saveLoginData(username: login)
                 let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
                 self.navigationController?.pushViewController(tabVC, animated: true)
             }
         }
     }
 
+    @IBAction func googleAuthorizationPressed(_ sender: GIDSignInButton) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     @IBAction private func usernameChanged(_ sender: UITextField) {
         hideErrorMessage()
         loginButtonSwitcher()

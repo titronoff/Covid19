@@ -10,8 +10,6 @@ import Swinject
 import Firebase
 import GoogleSignIn
 
-var loggeidIn: Bool = false
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
    

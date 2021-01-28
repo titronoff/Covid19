@@ -8,32 +8,31 @@
 import Foundation
 import KeychainAccess
 
-extension LoginVC {
-    
-    func getLoginData() {
+protocol KeychainUserdata {
+    func getLoginData() -> String
+    func saveLoginData(username: String)
+}
+
+class KeychainUserdataService: KeychainUserdata {
+    func getLoginData() -> String {
         let keychain = Keychain(service: "com.ivanovski.covid19-token")
-        //if let lastLoginData = UserDefaults.standard.data(forKey: "userData") {
         if let lastLoginData = keychain[data: "userdata"] {
             let decoder = PropertyListDecoder()
             let restoredUser = try? decoder.decode(Userdata.self, from: lastLoginData)
-            self.usernameInputField.text = restoredUser?.username ?? ""
+            return restoredUser?.username ?? ""
         }
+        return ""
     }
     
-    func saveLoginData() {
+    func saveLoginData(username: String) {
         let keychain = Keychain(service: "com.ivanovski.covid19-token")
-        userdata.username = self.usernameInputField.text ?? ""
-        userdata.password = passwordInputField.text ?? ""
+        userdata.username = username
         userdata.lastLoginDate = Date()
         
         if userdata.username != "" {
             let encoder = PropertyListEncoder()
             let data = try? encoder.encode(userdata)
-            //UserDefaults.standard.setValue(data, forKey: "userData")
             keychain[data: "userdata"] = data
         }
-            
-
-
     }
 }

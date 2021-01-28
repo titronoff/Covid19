@@ -63,7 +63,6 @@ class FirebaseUserdata: UserdataValidator, UserdataSaver, GoogleSignIn {
                                 self.readUserData(userId: authDataResult.user.uid)
                             }
                         //transfer to home screen
-                        loggeidIn = true
                         print("user signed in with Firebase")
                     }
                 }

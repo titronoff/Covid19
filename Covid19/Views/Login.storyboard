@@ -91,6 +91,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="R8O-CV-CTD"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="googleAuthorizationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1v-sJ-V8u"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-wa-7b5">
                                         <rect key="frame" x="0.0" y="456" width="334" height="17"/>
