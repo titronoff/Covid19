@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CaseDetailsVC: UIViewController {
+class CaseDetailsViewController: UIViewController {
     
     // Dependecies
     private let textProcessor = Dependencies.container.resolve(TextProcessor.self)!

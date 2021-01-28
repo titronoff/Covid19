@@ -12,7 +12,7 @@ import GoogleSignIn
 
 var userdata = Userdata()
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
     
     // Dependecies
     private let userValidator = Dependencies.container.resolve(UserFieldsValidator.self)!
@@ -73,7 +73,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction private func signUpPressed(_ sender: RoundedButton) {
-        let signUpVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "signUpVC") as! signUpVC
+        let signUpVC = UIStoryboard(name: "Signup", bundle: nil).instantiateViewController(withIdentifier: "signUpVC") as! signUpViewController
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     

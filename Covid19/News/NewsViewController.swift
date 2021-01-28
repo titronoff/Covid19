@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class NewsVC: UIViewController {
+class NewsViewController: UIViewController {
     
     // Dependecies
     private let network = Dependencies.container.resolve(NewsRepository.self)!
@@ -85,7 +85,7 @@ class NewsVC: UIViewController {
     }
 }
 //MARK: Cells operations
-extension NewsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == menuCV {
             return news.groups.count

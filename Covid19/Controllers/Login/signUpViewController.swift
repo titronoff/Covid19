@@ -7,7 +7,7 @@
 
 import UIKit
 
-class signUpVC: UIViewController {
+class signUpViewController: UIViewController {
     
     // Dependecies
     private let userValidator = Dependencies.container.resolve(UserFieldsValidator.self)!

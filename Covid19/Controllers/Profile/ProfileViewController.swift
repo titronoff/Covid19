@@ -9,7 +9,7 @@ import UIKit
 import Swinject
 import Firebase
 
-class ProfileVC: UIViewController {
+class ProfileViewController: UIViewController {
     
     //Outlets
     @IBOutlet weak var nameLabel: UILabel!

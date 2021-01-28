@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CasesTVC: UITableViewController {
+class CasesViewController: UITableViewController {
     
     // Dependecies
     private let network = Dependencies.container.resolve(CasesRepository.self)!
@@ -54,7 +54,7 @@ class CasesTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let caseDetailsVC = UIStoryboard(name: "CaseDetails", bundle: nil).instantiateViewController(withIdentifier: "CasesDetails") as! CaseDetailsVC
+        let caseDetailsVC = UIStoryboard(name: "CaseDetails", bundle: nil).instantiateViewController(withIdentifier: "CasesDetails") as! CaseDetailsViewController
         caseDetailsVC.caseToShow = cases.list[indexPath.row]
         navigationController?.pushViewController(caseDetailsVC, animated: true)
         

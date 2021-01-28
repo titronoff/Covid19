@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VideosVC: UIViewController {
+class VideosViewController: UIViewController {
     
     // Dependecies
     private let network = Dependencies.container.resolve(VideosRepository.self)!
@@ -75,7 +75,7 @@ class VideosVC: UIViewController {
     }
 }
 //MARK: Cells operations
-extension VideosVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension VideosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == menuCV {
             return videos.groups.count
