@@ -78,8 +78,8 @@ class FirebaseUserdata: UserdataValidator, UserdataSaver, GoogleSignIn {
             } else {
                 guard let authDataResult = result else {return}
                 requestResult = self.saveUserdata(newUserData: newUser, createUserResult: authDataResult)
-                completion(requestResult)
             }
+            completion(requestResult)
         }
     }
 

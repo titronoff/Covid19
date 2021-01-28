@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class signUpViewController: UIViewController {
     
@@ -18,11 +19,6 @@ class signUpViewController: UIViewController {
     @IBOutlet private weak var lastNameField: UITextField!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
-    @IBOutlet private weak var errorMessage: UILabel!{
-        didSet{
-            errorMessage.alpha = 0
-        }
-    }
     @IBOutlet private weak var signUp: RoundedButton!{
         didSet{
             signUp.layer.borderColor = UIColor.systemBlue.cgColor
@@ -33,12 +29,10 @@ class signUpViewController: UIViewController {
             backButton.layer.borderColor = UIColor.systemBlue.cgColor
         }
     }
-    @IBOutlet private weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpButtonSwitcher ()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func backPressed(_ sender: UIButton) {
@@ -101,15 +95,18 @@ class signUpViewController: UIViewController {
     }
     
     private func showError(_ message: String) {
-        errorMessage.text = message
-        errorMessage.alpha = 1
+        HUD.flash(.label(message), delay: 2)
     }
     
-    private func indicatorState (_ state: Bool) {
+    private func indicatorState (_ state: Bool, _ error: Bool = false) {
         if state {
-            indicator.startAnimating()
+            HUD.show(.progress)
         } else {
-            indicator.stopAnimating()
+            if error {
+                HUD.flash(.success, delay: 1.0)
+            } else {
+                HUD.flash(.success, delay: 0)
+            }
         }
     }
     

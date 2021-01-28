@@ -9,6 +9,7 @@ import UIKit
 import SafariServices
 import Swinject
 import GoogleSignIn
+import PKHUD
 
 var userdata = Userdata()
 
@@ -25,12 +26,6 @@ class LoginViewController: UIViewController {
     @IBOutlet  weak var usernameInputField: UITextField!
     @IBOutlet  weak var passwordInputField: UITextField!
     @IBOutlet private weak var loginButton: RoundedButton!
-    @IBOutlet weak var errorMessage: UILabel! {
-        didSet{
-            errorMessage.alpha = 0
-        }
-    }
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var SignInButton: RoundedButton!{
         didSet{
             SignInButton.layer.borderColor = UIColor.systemBlue.cgColor
@@ -51,7 +46,6 @@ class LoginViewController: UIViewController {
 // set up and evaluate
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideErrorMessage()
         setStyle()
         usernameInputField.text = keychainUserdata.getLoginData()
         loginButtonSwitcher ()
@@ -78,16 +72,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func loginPressed(_ sender: UIButton) {
-        self.hideErrorMessage()
         indicatorState(true)
         let login = usernameInputField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let pswd = passwordInputField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         userdataValidator.userLogIn(email: login, password: pswd) {requestResult in
             if requestResult != nil {
-                self.indicatorState(false)
+                self.indicatorState(false, true)
                 self.showError(requestResult!)
             } else {
                 self.indicatorState(false)
+                HUD.flash(.success, delay: 1.0)
                 self.keychainUserdata.saveLoginData(username: login)
                 let tabVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabVC")
                 self.navigationController?.pushViewController(tabVC, animated: true)
@@ -100,12 +94,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func usernameChanged(_ sender: UITextField) {
-        hideErrorMessage()
         loginButtonSwitcher()
     }
 
     @IBAction private func pswdChanged(_ sender: UITextField) {
-        hideErrorMessage()
         loginButtonSwitcher()
     }
     
@@ -125,18 +117,17 @@ class LoginViewController: UIViewController {
         self.passwordInputField.textColor = styleProvider.getTextColor()
     }
     private func showError(_ message: String) {
-        errorMessage.text = message
-        errorMessage.alpha = 1
+        HUD.flash(.label(message), delay: 2)
     }
-    private func hideErrorMessage() {
-        errorMessage.alpha = 0
-        errorMessage.text = ""
-    }
-    private func indicatorState (_ state: Bool) {
+    private func indicatorState (_ state: Bool, _ error: Bool = false) {
         if state {
-            indicator.startAnimating()
+            HUD.show(.progress)
         } else {
-            indicator.stopAnimating()
+            if error {
+                HUD.flash(.success, delay: 1.0)
+            } else {
+                HUD.flash(.success, delay: 0)
+            }
         }
     }
 }
