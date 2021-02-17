@@ -1,0 +1,32 @@
+*.xcodeproj/*
+*.xcodeproj/project.pbxproj
+*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+
+xcuserdata
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+Pods/
+
+fastlane/screenshots
+
+# OSX Temp
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# OSX Thumbnails
+._*
+
+# OSX Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# vim
+*.swp

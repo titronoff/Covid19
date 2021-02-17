@@ -8,13 +8,11 @@
 import UIKit
 import Swinject
 import Firebase
-import GoogleSignIn
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
    
     var logger : Logger?
-    var googleSignIn: GoogleSignIn?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Dependencies.container = Container()
@@ -23,15 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         
         logger = Dependencies.container.resolve(Logger.self)!
-        googleSignIn = Dependencies.container.resolve(GoogleSignIn.self)!
-        
-        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance()?.delegate = self
+
         
         return true
-    }
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        googleSignIn?.googleUserLogin(signIn: signIn, user: user, error: error)
     }
     // MARK: UISceneSession Lifecycle
 

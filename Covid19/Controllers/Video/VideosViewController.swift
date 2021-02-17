@@ -54,17 +54,6 @@ class VideosViewController: UIViewController {
         let mWidth = UIScreen.main.bounds.width
         return CGSize(width: mWidth, height: (mWidth * 0.5625))
     }
-    //    func calculateMenuItemCellsize(_ item: String) -> CGSize {
-    //        var totalWidth : CGFloat = 0
-    //        let mWidth = UIScreen.main.bounds.width
-    //        for menuItem in self.news.items {
-    //            totalWidth += menuItem.name.size(withAttributes:[.font: UIFont.systemFont(ofSize:12.0)]).width
-    //        }
-    //        let spacer = (mWidth - totalWidth) / CGFloat(news.items.count)
-    //        let itemSize = String(item).size(withAttributes:[.font: UIFont.systemFont(ofSize:12.0)])
-    //        let width = (itemSize.width + spacer)
-    //        return CGSize(width: width , height: menuHeightNSC.constant)
-    //    }
     
 //MARK: Configure Refresh Controler
     func configureRefreshControler () {

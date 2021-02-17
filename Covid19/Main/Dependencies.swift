@@ -26,7 +26,6 @@ class Dependencies {
         Dependencies.container.register(Logger.self) { _ in LoggerService()}
         Dependencies.container.register(UserdataValidator.self) { _ in FirebaseUserdata()}
         Dependencies.container.register(UserdataSaver.self) { _ in FirebaseUserdata()}
-        Dependencies.container.register(GoogleSignIn.self) { _ in FirebaseUserdata()}
         Dependencies.container.register(KeychainUserdata.self) { _ in KeychainUserdataService()}
         
         //UI

@@ -8,7 +8,6 @@
 import UIKit
 import SafariServices
 import Swinject
-import GoogleSignIn
 import PKHUD
 
 var userdata = Userdata()
@@ -31,7 +30,7 @@ class LoginViewController: UIViewController {
             SignInButton.layer.borderColor = UIColor.systemBlue.cgColor
         }
     }
-    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+
     
 // MARK: Animation
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +50,7 @@ class LoginViewController: UIViewController {
         loginButtonSwitcher ()
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
-        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
+
     }
     
     @objc private func kbDidShow(notification: Notification) {
@@ -87,10 +85,6 @@ class LoginViewController: UIViewController {
                 self.navigationController?.pushViewController(tabVC, animated: true)
             }
         }
-    }
-
-    @IBAction func googleAuthorizationPressed(_ sender: GIDSignInButton) {
-        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction private func usernameChanged(_ sender: UITextField) {

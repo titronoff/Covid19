@@ -29,7 +29,7 @@ struct Videogroup {
         let requestType = "search?"
         let results = 10
         let part = "part=snippet&q=\(keyword)&type=video&videoCaption=closedCaption&maxResults=\(results)"
-        return "\(resourceUrl)\(requestType)\(part)&key=\(ytAPIkey[1])"
+        return "\(resourceUrl)\(requestType)\(part)&key=\(ytAPIkey[2])"
     }
     var list = VideosList()
 }

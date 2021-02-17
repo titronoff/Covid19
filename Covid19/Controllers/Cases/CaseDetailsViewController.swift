@@ -24,7 +24,6 @@ class CaseDetailsViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         countryLb.text = caseToShow.country
         infectedLb.text = " " + textProcessor.zeroChanger(caseToShow.infected ?? 0) + " "
         recoveredLb.text = " " + textProcessor.zeroChanger(caseToShow.recovered ?? 0) + " "

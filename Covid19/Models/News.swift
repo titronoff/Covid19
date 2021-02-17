@@ -16,7 +16,7 @@ class News {
                       "0421233d9abb47b1a05338cf4e403508", //4
                       "fdbaf3a7e09b483daad5015193c88b68"] //5
     init() {
-        let apiKey = newsApiKey[0]
+        let apiKey = newsApiKey[1]
         self.groups.append(NewsGroupe(id: 0, name: "All Top", url: "https://newsapi.org/v2/top-headlines?q=covid&apiKey=\(apiKey)"))
         self.groups.append(NewsGroupe(id: 1, name: "BBC", url: "https://newsapi.org/v2/everything?q=covid&sources=bbc-news&apiKey=\(apiKey)"))
         self.groups.append(NewsGroupe(id: 2, name: "CBS", url: "https://newsapi.org/v2/everything?q=covid&sources=cbs-news&apiKey=\(apiKey)"))

@@ -8,7 +8,6 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
-import GoogleSignIn
 
 protocol UserdataValidator{
     func userLogIn(email: String, password: String, completion: @escaping (_ requestResult: String?) -> ())
@@ -17,11 +16,7 @@ protocol UserdataSaver {
     func createUser(newUser: Userdata, completion: @escaping (_ requestResult: String?) -> ())
 }
 
-protocol GoogleSignIn {
-    func googleUserLogin (signIn: GIDSignIn!, user: GIDGoogleUser!, error: Error!)
-}
-
-class FirebaseUserdata: UserdataValidator, UserdataSaver, GoogleSignIn {
+class FirebaseUserdata: UserdataValidator, UserdataSaver {
     
     func userLogIn(email: String, password: String, completion: @escaping (_ requestResult: String?) -> ()) {
         var requestResult: String?
@@ -34,39 +29,6 @@ class FirebaseUserdata: UserdataValidator, UserdataSaver, GoogleSignIn {
                 }
             }
             completion(requestResult)
-        }
-    }
-    func googleUserLogin (signIn: GIDSignIn!, user: GIDGoogleUser!, error: Error!) {
-        if let error = error {
-            print(error.localizedDescription)
-        } else {
-            //Firebase signIn
-            guard let user = user else {return}
-            let cred = GoogleAuthProvider.credential(withIDToken: user.authentication.idToken, accessToken: user.authentication.accessToken)
-            Auth.auth().signIn(with: cred) { (authDataResult, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                } else {
-                    guard let authDataResult = authDataResult else {return}
-                    //Chek if user exits
-                    Firestore.firestore().collection("users").whereField("uid", isEqualTo: authDataResult.user.uid).getDocuments() { (querySnapshot, err) in
-                        if querySnapshot?.count == 0 {
-                                //no user exists - create new record
-                                var newUserData = Userdata()
-                                newUserData.firstName = user.profile.givenName
-                                newUserData.lastName = user.profile.familyName
-                                newUserData.uId = authDataResult.user.uid
-                                self.saveUserdata(newUserData: newUserData, createUserResult: authDataResult)
-                                print("new user saved")
-                            } else {
-                                self.readUserData(userId: authDataResult.user.uid)
-                            }
-                        //transfer to home screen
-                        print("user signed in with Firebase")
-                    }
-                }
-            }
         }
     }
     
