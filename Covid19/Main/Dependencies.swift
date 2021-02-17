@@ -36,7 +36,6 @@ class Dependencies {
         //Text
         Dependencies.container.register(TextProcessor.self) { _ in TextProcessorService()}
         
-        Dependencies.container.register(LoginViewModel.self) { _ in LoginViewModelImpl()}
     }
 }
 
