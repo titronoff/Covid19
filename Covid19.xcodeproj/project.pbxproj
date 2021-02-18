@@ -75,12 +75,12 @@
 		E9700E5025BF46FB00781212 /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		E99441A525666EC900DCFE39 /* CaseDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaseDetails.storyboard; sourceTree = "<group>"; };
 		E99441E72566C05400DCFE39 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
-		E99441E82566C05400DCFE39 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCell.swift; path = News/ArticleCell.swift; sourceTree = "<group>"; };
+		E99441E82566C05400DCFE39 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCell.swift; path = Controllers/News/ArticleCell.swift; sourceTree = "<group>"; };
 		E99441E92566C05400DCFE39 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		E99441EA2566C05400DCFE39 /* ArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		E99441EB2566C05400DCFE39 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		E99441EC2566C05400DCFE39 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		E99441ED2566C05400DCFE39 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = News/NewsViewController.swift; sourceTree = "<group>"; };
+		E99441ED2566C05400DCFE39 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = Controllers/News/NewsViewController.swift; sourceTree = "<group>"; };
 		E99442E22568256500DCFE39 /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
 		E99442E32568256500DCFE39 /* CaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseCell.xib; sourceTree = "<group>"; };
 		E99DB7CB256EC5EB00E6317D /* TextProcessorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextProcessorService.swift; sourceTree = "<group>"; };
